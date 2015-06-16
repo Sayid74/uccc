@@ -1,0 +1,2605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+   Copyright 2012 Manning Publications Co.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<chem:typeDefinitions xmlns="http://docs.oasis-open.org/ns/cmis/core/200908/"
+     xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:chem="http://chemistry.apache.org/schemas/TypeDefnitions">
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:taggable</id>
+    <localName>Taggable</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmis:document</parentId>
+    <displayName>Taggable</displayName>
+    <queryName>cmisbook:taggable</queryName>
+    <description>Taggable document</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyStringDefinition>
+        <id>cmisbook:tags</id>
+        <localName>Tags</localName>
+        <displayName>Tags</displayName>
+        <queryName>cmisbook:tags</queryName>
+        <description>Tags</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>multi</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:image</id>
+    <localName>Image</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmisbook:taggable</parentId>
+    <displayName>Image</displayName>
+    <queryName>cmisbook:image</queryName>
+    <description>Image</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyIntegerDefinition>
+        <id>cmisbook:imageWidth</id>
+        <localName>0x0100</localName>
+        <displayName>Image Width</displayName>
+        <queryName>cmisbook:imageWidth</queryName>
+        <description>Image Width</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>oncreate</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:imageHeight</id>
+        <localName>0x0101</localName>
+        <displayName>Image Height</displayName>
+        <queryName>cmisbook:imageHeight</queryName>
+        <description>Image Height</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>oncreate</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:bitsPerSample</id>
+        <localName>0x0102</localName>
+        <displayName>Bits Per Sample</displayName>
+        <queryName>cmisbook:bitsPerSample</queryName>
+        <description>Bits Per Sample</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>oncreate</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:compression</id>
+        <localName>0x0103</localName>
+        <displayName>Compression</displayName>
+        <queryName>cmisbook:compression</queryName>
+        <description>Compression Format</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>oncreate</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Uncompressed">
+            <value>1</value>
+        </choice>
+        <choice displayName="CCITT 1D">
+            <value>2</value>
+        </choice>
+        <choice displayName="T4/Group 3 Fax">
+            <value>3</value>
+        </choice>
+        <choice displayName="T6/Group 4 Fax">
+            <value>4</value>
+        </choice>
+        <choice displayName="LZW">
+            <value>5</value>
+        </choice>
+        <choice displayName="JPEG (old-style)">
+            <value>6</value>
+        </choice>
+        <choice displayName="JPEG">
+            <value>7</value>
+        </choice>
+        <choice displayName="Adobe Deflate">
+            <value>8</value>
+        </choice>
+        <choice displayName="JBIG BW">
+            <value>9</value>
+        </choice>
+        <choice displayName="JBIG Color">
+            <value>10</value>
+        </choice>
+        <choice displayName="JPEG">
+            <value>99</value>
+        </choice>
+        <choice displayName="Kodak 262">
+            <value>262</value>
+        </choice>
+        <choice displayName="Next">
+            <value>32766</value>
+        </choice>
+        <choice displayName="Sony ARW Compressed">
+            <value>32767</value>
+        </choice>
+        <choice displayName="Packed RAW">
+            <value>32769</value>
+        </choice>
+        <choice displayName="Samsung SRW Compressed">
+            <value>32770</value>
+        </choice>
+        <choice displayName="CCIRLEW">
+            <value>32771</value>
+        </choice>
+        <choice displayName="PackBits">
+            <value>32773</value>
+        </choice>
+        <choice displayName="Thunderscan">
+            <value>32809</value>
+        </choice>
+        <choice displayName="Kodak KDC Compressed">
+            <value>32867</value>
+        </choice>
+        <choice displayName="IT8CTPAD">
+            <value>32895</value>
+        </choice>
+        <choice displayName="IT8LW">
+            <value>32896</value>
+        </choice>
+        <choice displayName="IT8MP">
+            <value>32897</value>
+        </choice>
+        <choice displayName="IT8BL">
+            <value>32898</value>
+        </choice>
+        <choice displayName="PixarFilm">
+            <value>32908</value>
+        </choice>
+        <choice displayName="PixarLog">
+            <value>32909</value>
+        </choice>
+        <choice displayName="Deflate">
+            <value>32946</value>
+        </choice>
+        <choice displayName="DCS">
+            <value>32947</value>
+        </choice>
+        <choice displayName="JBIG">
+            <value>34661</value>
+        </choice>
+        <choice displayName="SGILog">
+            <value>34676</value>
+        </choice>
+        <choice displayName="SGILog24">
+            <value>34677</value>
+        </choice>
+        <choice displayName="JPEG 2000">
+            <value>34712</value>
+        </choice>
+        <choice displayName="Nikon NEF Compressed">
+            <value>34713</value>
+        </choice>
+        <choice displayName="JBIG2 TIFF FX">
+            <value>34715</value>
+        </choice>
+        <choice displayName="Microsoft Document Imaging (MDI) Binary Level Codec">
+            <value>34718</value>
+        </choice>
+        <choice displayName="Microsoft Document Imaging (MDI) Progressive Transform Codec">
+            <value>34719</value>
+        </choice>
+        <choice displayName="Microsoft Document Imaging (MDI) Vector">
+            <value>34720</value>
+        </choice>
+        <choice displayName="Kodak DCR Compressed">
+            <value>65000</value>
+        </choice>
+        <choice displayName="Pentax PEF Compressed">
+            <value>65535</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:photometricInterpretation</id>
+        <localName>0x0106</localName>
+        <displayName>Photometric Interpretation</displayName>
+        <queryName>cmisbook:photometricInterpretation</queryName>
+        <description>Color Format</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>oncreate</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="WhiteIsZero">
+            <value>0</value>
+        </choice>
+        <choice displayName="BlackIsZero">
+            <value>1</value>
+        </choice>
+        <choice displayName="RGB">
+            <value>2</value>
+        </choice>
+        <choice displayName="RGB Palette">
+            <value>3</value>
+        </choice>
+        <choice displayName="Transparency Mask">
+            <value>4</value>
+        </choice>
+        <choice displayName="CMYK">
+            <value>5</value>
+        </choice>
+        <choice displayName="YCbCr">
+            <value>6</value>
+        </choice>
+        <choice displayName="CIELab">
+            <value>8</value>
+        </choice>
+        <choice displayName="ICCLab">
+            <value>9</value>
+        </choice>
+        <choice displayName="ITULab">
+            <value>10</value>
+        </choice>
+        <choice displayName="Color Filter Array">
+            <value>32803</value>
+        </choice>
+        <choice displayName="Pixar LogL">
+            <value>32844</value>
+        </choice>
+        <choice displayName="Pixar LogLuv">
+            <value>32845</value>
+        </choice>
+        <choice displayName="Linear Raw">
+            <value>34892</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:imageDescription</id>
+        <localName>0x010e</localName>
+        <displayName>Image Description</displayName>
+        <queryName>cmisbook:imageDescription</queryName>
+        <description>Description</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:make</id>
+        <localName>0x010f</localName>
+        <displayName>Make</displayName>
+        <queryName>cmisbook:make</queryName>
+        <description>Camera Make</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:model</id>
+        <localName>0x0110</localName>
+        <displayName>Model</displayName>
+        <queryName>cmisbook:model</queryName>
+        <description>Camera Model</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:orientation</id>
+        <localName>0x0112</localName>
+        <displayName>Orientation</displayName>
+        <queryName>cmisbook:orientation</queryName>
+        <description>Orientation</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Horizontal (normal)">
+            <value>1</value>
+        </choice>
+        <choice displayName="Mirror horizontal">
+            <value>2</value>
+        </choice>
+        <choice displayName="Rotate 180">
+            <value>3</value>
+        </choice>
+        <choice displayName="Mirror vertical">
+            <value>4</value>
+        </choice>
+        <choice displayName="Mirror horizontal and rotate 270 CW">
+            <value>5</value>
+        </choice>
+        <choice displayName="Rotate 90 CW">
+            <value>6</value>
+        </choice>
+        <choice displayName="Mirror horizontal and rotate 90 CW">
+            <value>7</value>
+        </choice>
+        <choice displayName="Rotate 270 CW">
+            <value>8</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:xResolution</id>
+        <localName>0x011a</localName>
+        <displayName>X Resolution</displayName>
+        <queryName>cmisbook:xResolution</queryName>
+        <description>x-resolution</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:yResolution</id>
+        <localName>0x011b</localName>
+        <displayName>Y Resolution</displayName>
+        <queryName>cmisbook:yResolution</queryName>
+        <description>y-resolution</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:resolutionUnit</id>
+        <localName>0x0128</localName>
+        <displayName>Resolution Unit</displayName>
+        <queryName>cmisbook:resolutionUnit</queryName>
+        <description>Resolution Unit</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="None">
+            <value>1</value>
+        </choice>
+        <choice displayName="inches">
+            <value>2</value>
+        </choice>
+        <choice displayName="cm">
+            <value>3</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:software</id>
+        <localName>0x0131</localName>
+        <displayName>Software</displayName>
+        <queryName>cmisbook:software</queryName>
+        <description>Software</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyDateTimeDefinition>
+        <id>cmisbook:modifyTime</id>
+        <localName>0x0132</localName>
+        <displayName>Modify Date</displayName>
+        <queryName>cmisbook:modifyTime</queryName>
+        <description>Modify Date</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>datetime</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDateTimeDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:imageArtist</id>
+        <localName>0x013b</localName>
+        <displayName>Artist</displayName>
+        <queryName>cmisbook:imageArtist</queryName>
+        <description>Artist</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:yCbCrPositioning</id>
+        <localName>0x0213</localName>
+        <displayName>YCbCrPositioning</displayName>
+        <queryName>cmisbook:yCbCrPositioning</queryName>
+        <description>YCbCr Positioning</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Centered">
+            <value>1</value>
+        </choice>
+        <choice displayName="Co-sited">
+            <value>2</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:copyright</id>
+        <localName>0x8298</localName>
+        <displayName>Copyright</displayName>
+        <queryName>cmisbook:copyright</queryName>
+        <description>Copyright Notice</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:exposureTime</id>
+        <localName>0x829a</localName>
+        <displayName>Exposure Time</displayName>
+        <queryName>cmisbook:exposureTime</queryName>
+        <description>Exposure Time</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>oncreate</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:fNumber</id>
+        <localName>0x829d</localName>
+        <displayName>F-Number</displayName>
+        <queryName>cmisbook:fNumber</queryName>
+        <description>F-Stop Number</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>oncreate</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:exposureProgram</id>
+        <localName>0x8822</localName>
+        <displayName>Exposure Program</displayName>
+        <queryName>cmisbook:exposureProgram</queryName>
+        <description>Exposure Program</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>oncreate</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Not Defined">
+            <value>0</value>
+        </choice>
+        <choice displayName="Manual">
+            <value>1</value>
+        </choice>
+        <choice displayName="Program AE">
+            <value>2</value>
+        </choice>
+        <choice displayName="Aperture-priority AE">
+            <value>3</value>
+        </choice>
+        <choice displayName="Shutter speed priority AE">
+            <value>4</value>
+        </choice>
+        <choice displayName="Creative (Slow speed)">
+            <value>5</value>
+        </choice>
+        <choice displayName="Action (High speed)">
+            <value>6</value>
+        </choice>
+        <choice displayName="Portrait">
+            <value>7</value>
+        </choice>
+        <choice displayName="Landscape">
+            <value>8</value>
+        </choice>
+        <choice displayName="Bulb">
+            <value>9</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:isoSpeed</id>
+        <localName>0x8827</localName>
+        <displayName>ISO Speed</displayName>
+        <queryName>cmisbook:isoSpeed</queryName>
+        <description>ISO Speed Setting</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>oncreate</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:gpsLatitude</id>
+        <localName>0x8825-0x0002</localName>
+        <displayName>GPS Latitude</displayName>
+        <queryName>cmisbook:gpsLatitude</queryName>
+        <description>GPS Latitude</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:gpsLatitudeRef</id>
+        <localName>0x8825-0x0001</localName>
+        <displayName>GPS Latitude Ref</displayName>
+        <queryName>cmisbook:gpsLatitudeRef</queryName>
+        <description>GPS Latitude Reference (N/S)</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="North">
+            <value>N</value>
+        </choice>
+        <choice displayName="South">
+            <value>S</value>
+        </choice>
+    </propertyStringDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:gpsLongitude</id>
+        <localName>0x8825-0x0004</localName>
+        <displayName>GPS Longitude</displayName>
+        <queryName>cmisbook:gpsLongitude</queryName>
+        <description>GPS Longitude</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:gpsLongitudeRef</id>
+        <localName>0x8825-0x0003</localName>
+        <displayName>GPS Longitude Ref</displayName>
+        <queryName>cmisbook:gpsLongitudeRef</queryName>
+        <description>GPS Longitude Reference (W/E)</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="East">
+            <value>E</value>
+        </choice>
+        <choice displayName="West">
+            <value>W</value>
+        </choice>
+    </propertyStringDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:gpsAltitude</id>
+        <localName>0x8825-0x0006</localName>
+        <displayName>GPS Altitude</displayName>
+        <queryName>cmisbook:gpsAltitude</queryName>
+        <description>GPS Altitude</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:gpsAltitudeRef</id>
+        <localName>0x8825-0x0005</localName>
+        <displayName>GPS Altitude Ref</displayName>
+        <queryName>cmisbook:gpsAltitudeRef</queryName>
+        <description>GPS Altitude Reference</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Above Sea Level">
+            <value>0</value>
+        </choice>
+        <choice displayName="Below Sea Level">
+            <value>1</value>
+        </choice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:selfTimerMode</id>
+        <localName>0x882b</localName>
+        <displayName>Self Timer Mode</displayName>
+        <queryName>misbook:selfTimerMode</queryName>
+        <description>Self Timer Mode</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:timeZoneOffset</id>
+        <localName>0x882a</localName>
+        <displayName>Time Zone Offset</displayName>
+        <queryName>cmisbook:timeZoneOffset</queryName>
+        <description>Time Zone Offset (GMT offset in hours)</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>multi</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyDateTimeDefinition>
+        <id>cmisbook:dateTimeOriginal</id>
+        <localName>0x9003</localName>
+        <displayName>Date Time Original</displayName>
+        <queryName>cmisbook:dateTimeOriginal</queryName>
+        <description>date/time when original image was taken</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>datetime</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDateTimeDefinition>
+    <propertyDateTimeDefinition>
+        <id>cmisbook:createDate</id>
+        <localName>0x9004</localName>
+        <displayName>Create Date</displayName>
+        <queryName>cmisbook:createDate</queryName>
+        <description>date/time digitized</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>datetime</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDateTimeDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:shutterSpeedValue</id>
+        <localName>0x9201</localName>
+        <displayName>Shutter Speed Value</displayName>
+        <queryName>cmisbook:shutterSpeedValue</queryName>
+        <description>shutter speed value</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:apertureValue</id>
+        <localName>0x9202</localName>
+        <displayName>Aperture Value</displayName>
+        <queryName>cmisbook:apertureValue</queryName>
+        <description>Aperture Value</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:brightnessValue</id>
+        <localName>0x9203</localName>
+        <displayName>Brightness Value</displayName>
+        <queryName>cmisbook:brightnessValue</queryName>
+        <description>Brightness Value</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:exposureCompensation</id>
+        <localName>0x9204</localName>
+        <displayName>Exposure Compensation</displayName>
+        <queryName>cmisbook:exposureCompensation</queryName>
+        <description>Exposure Compensation</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:maxApertureValue</id>
+        <localName>0x9205</localName>
+        <displayName>Max Aperture Value</displayName>
+        <queryName>cmisbook:maxApertureValue</queryName>
+        <description>Max Aperture Value</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:meteringMode</id>
+        <localName>0x9207</localName>
+        <displayName>Metering Mode</displayName>
+        <queryName>cmisbook:meteringMode</queryName>
+        <description>metering mode</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Unknown">
+            <value>0</value>
+        </choice>
+        <choice displayName="Average">
+            <value>1</value>
+        </choice>
+        <choice displayName="Center-weighted average">
+            <value>2</value>
+        </choice>
+        <choice displayName="Spot">
+            <value>3</value>
+        </choice>
+        <choice displayName="Multi-spot">
+            <value>4</value>
+        </choice>
+        <choice displayName="Multi-segment">
+            <value>5</value>
+        </choice>
+        <choice displayName="Partial">
+            <value>6</value>
+        </choice>
+        <choice displayName="Other">
+            <value>255</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:subjectDistance</id>
+        <localName>0x9206</localName>
+        <displayName>Subject Distance</displayName>
+        <queryName>cmisbook:subjectDistance</queryName>
+        <description>subject distance</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:lightSource</id>
+        <localName>0x9208</localName>
+        <displayName>Light Source</displayName>
+        <queryName>cmisbook:lightSource</queryName>
+        <description>light source value</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:flash</id>
+        <localName>0x9209</localName>
+        <displayName>Flash</displayName>
+        <queryName>cmisbook:flash</queryName>
+        <description>Flash Setting</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:focalLength</id>
+        <localName>0x920a</localName>
+        <displayName>Focal Length</displayName>
+        <queryName>cmisbook:focalLength</queryName>
+        <description>focal length</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:userComment</id>
+        <localName>0x9286</localName>
+        <displayName>User Comment</displayName>
+        <queryName>cmisbook:userComment</queryName>
+        <description>user comment</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:colorSpace</id>
+        <localName>0xa001</localName>
+        <displayName>Color Space</displayName>
+        <queryName>cmisbook:colorSpace</queryName>
+        <description>color space</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="sRGB">
+            <value>1</value>
+        </choice>
+        <choice displayName="Adobe RGB">
+            <value>2</value>
+        </choice>
+        <choice displayName="Wide Gamut RGB">
+            <value>65533</value>
+        </choice>
+        <choice displayName="ICC Profile">
+            <value>65534</value>
+        </choice>
+        <choice displayName="Uncalibrated">
+            <value>65535</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:pixelXDimension</id>
+        <localName>0xa002</localName>
+        <displayName>PixelXDimension</displayName>
+        <queryName>cmisbook:pixelXDimension</queryName>
+        <description>dimension in pixel x</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:pixelYDimension</id>
+        <localName>0xa003</localName>
+        <displayName>PixelYDimension</displayName>
+        <queryName>cmisbook:pixelYDimension</queryName>
+        <description>dimension in pixel y</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:exposureMode</id>
+        <localName>0xa402</localName>
+        <displayName>Exposure Mode</displayName>
+        <queryName>cmisbook:exposureMode</queryName>
+        <description>Exposure Mode</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Auto">
+            <value>0</value>
+        </choice>
+        <choice displayName="Manual">
+            <value>1</value>
+        </choice>
+        <choice displayName="Auto bracket">
+            <value>2</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:whiteBalance</id>
+        <localName>0xa403</localName>
+        <displayName>White Balance</displayName>
+        <queryName>cmisbook:whiteBalance</queryName>
+        <description>white balance</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Auto">
+            <value>0</value>
+        </choice>
+        <choice displayName="Manual">
+            <value>1</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:sceneCaptureType</id>
+        <localName>0xa406</localName>
+        <displayName>Scene Capture Type</displayName>
+        <queryName>cmisbook:sceneCaptureType</queryName>
+        <description>Scene Capture Type</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Standard">
+            <value>0</value>
+        </choice>
+        <choice displayName="Landscape">
+            <value>1</value>
+        </choice>
+        <choice displayName="Portrait">
+            <value>2</value>
+        </choice>
+        <choice displayName="Night">
+            <value>3</value>
+        </choice>
+    </propertyIntegerDefinition>
+    <propertyIdDefinition>
+        <id>cmisbook:imageUniqueId</id>
+        <localName>0xa420</localName>
+        <displayName>Image Unique Id</displayName>
+        <queryName>cmisbook:imageUniqueId</queryName>
+        <description>Image Unique Id</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>id</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIdDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:ownerName</id>
+        <localName>0xa430</localName>
+        <displayName>Owner Name</displayName>
+        <queryName>cmisbook:ownerName</queryName>
+        <description>Owner Name</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:serialNumber</id>
+        <localName>0xa431</localName>
+        <displayName>Serial Number</displayName>
+        <queryName>cmisbook:serialNumber</queryName>
+        <description>serial number</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:rating</id>
+        <localName>0x4746</localName>
+        <displayName>Rating</displayName>
+        <queryName>cmisbook:rating</queryName>
+        <description>rating value</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:ratingPercent</id>
+        <localName>0x4749</localName>
+        <displayName>Rating Percent</displayName>
+        <queryName>cmisbook:ratingPercent</queryName>
+        <description>rating percent</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:dataPrecision</id>
+        <localName>0x0000</localName>
+        <displayName>Data Precision</displayName>
+        <queryName>cmisbook:dataPrecision</queryName>
+        <description>JPEG Data Precision</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:media</id>
+    <localName>Media</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmisbook:taggable</parentId>
+    <displayName>Media</displayName>
+    <queryName>cmisbook:media</queryName>
+    <description>Media</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyUriDefinition>
+        <id>cmisbook:sourceURL</id>
+        <localName>SourceURL</localName>
+        <displayName>Source URL</displayName>
+        <queryName>cmisbook:sourceURL</queryName>
+        <description>Source URL</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>uri</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyUriDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:license</id>
+        <localName>license</localName>
+        <displayName>License</displayName>
+        <queryName>cmisbook:license</queryName>
+        <description>License</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:year</id>
+        <localName>Year</localName>
+        <displayName>Year</displayName>
+        <queryName>cmisbook:year</queryName>
+        <description>Release date</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <minValue>0</minValue>
+        <maxValue>9999</maxValue>
+    </propertyIntegerDefinition>
+    <propertyIdDefinition>
+        <id>cmisbook:artwork</id>
+        <localName>Artwork</localName>
+        <displayName>Artwork</displayName>
+        <queryName>cmisbook:artwork</queryName>
+        <description>Artwork</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>id</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIdDefinition>
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:audio</id>
+    <localName>AudioFile</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmisbook:media</parentId>
+    <displayName>Audio File</displayName>
+    <queryName>cmisbook:audio</queryName>
+    <description>Audio Content (compressed or uncompressed)</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyStringDefinition>
+        <id>cmisbook:artist</id>
+        <localName>Artist</localName>
+        <displayName>Artist</displayName>
+        <queryName>cmisbook:artist</queryName>
+        <description>Artist</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:album</id>
+        <localName>Album</localName>
+        <displayName>Album</displayName>
+        <queryName>cmisbook:album</queryName>
+        <description>title</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:title</id>
+        <localName>Title</localName>
+        <displayName>Title</displayName>
+        <queryName>cmisbook:title</queryName>
+        <description>Title</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:comment</id>
+        <localName>Comment</localName>
+        <displayName>Comment</displayName>
+        <queryName>cmisbook:comment</queryName>
+        <description>Comment</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:genre</id>
+        <localName>Genre</localName>
+        <displayName>Genre</displayName>
+        <queryName>cmisbook:genre</queryName>
+        <description>Genre</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:length</id>
+        <localName>Length</localName>
+        <displayName>Length</displayName>
+        <queryName>cmisbook:length</queryName>
+        <description>Length in seconds</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:track</id>
+        <localName>Track</localName>
+        <displayName>Track</displayName>
+        <queryName>cmisbook:track</queryName>
+        <description>Track in album</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:composer</id>
+        <localName>Composer</localName>
+        <displayName>Composer</displayName>
+        <queryName>cmisbook:composer</queryName>
+        <description>Composer</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:discNo</id>
+        <localName>Disc Number</localName>
+        <displayName>Disc Number</displayName>
+        <queryName>cmisbook:discNo</queryName>
+        <description>number of disc / total discs</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:audioFormat</id>
+        <localName>Audio Format</localName>
+        <displayName>Audio Format</displayName>
+        <queryName>cmisbook:audioFormat</queryName>
+        <description>Audio Format / compression scheme</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:sampleRate</id>
+        <localName>Sample Rate</localName>
+        <displayName>Sample Rate</displayName>
+        <queryName>cmisbook:sampleRate</queryName>
+        <description>Sample Rate</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:audioChannelType</id>
+        <localName>Audio Channel Type</localName>
+        <displayName>Audio Channel Type</displayName>
+        <queryName>cmisbook:audioChannelType</queryName>
+        <description>audio channel type</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+        <choice displayName="Mono">
+            <value>Mono</value>
+        </choice>
+        <choice displayName="Stereo">
+            <value>Stereo</value>
+        </choice>
+        <choice displayName="5.1">
+            <value>5.1</value>
+        </choice>
+        <choice displayName="7.1">
+            <value>7.1</value>
+        </choice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:noChannels</id>
+        <localName>Number Channels</localName>
+        <displayName>Number Channels</displayName>
+        <queryName>cmisbook:noChannels</queryName>
+        <description>number of audio channels</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:compressorVersion</id>
+        <localName>Compressor Version</localName>
+        <displayName>Compressor Version</displayName>
+        <queryName>cmisbook:compressorVersion</queryName>
+        <description>version description of compressor</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:video</id>
+    <localName>VideoFile</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmisbook:media</parentId>
+    <displayName>Video File</displayName>
+    <queryName>cmisbook:video</queryName>
+    <description>Video Content</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyIntegerDefinition>
+        <id>cmisbook:videoWidth</id>
+        <localName>width</localName>
+        <displayName>Width</displayName>
+        <queryName>cmisbook:videoWidth</queryName>
+        <description>Video Width</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:videoHeight</id>
+        <localName>height</localName>
+        <displayName>Height</displayName>
+        <queryName>cmisbook:videoHeight</queryName>
+        <description>Video Height</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyBooleanDefinition>
+        <id>cmisbook:hasVideo</id>
+        <localName>hasVideo</localName>
+        <displayName>Has Video</displayName>
+        <queryName>cmisbook:hasVideo</queryName>
+        <description>Has Video</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>boolean</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyBooleanDefinition>
+    <propertyBooleanDefinition>
+        <id>cmisbook:hasAudio</id>
+        <localName>hasAudio</localName>
+        <displayName>Has Audio</displayName>
+        <queryName>cmisbook:hasAudio</queryName>
+        <description>Has Video</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>boolean</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyBooleanDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:datasize</id>
+        <localName>datasize</localName>
+        <displayName>Data Size</displayName>
+        <queryName>cmisbook:datasize</queryName>
+        <description>Data size</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:videosize</id>
+        <localName>videosize</localName>
+        <displayName>Video Size</displayName>
+        <queryName>cmisbook:videosize</queryName>
+        <description>Video size</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:audiosize</id>
+        <localName>audiosize</localName>
+        <displayName>Audio Size</displayName>
+        <queryName>cmisbook:audiosize</queryName>
+        <description>Audio size</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>   
+    <propertyDecimalDefinition>
+        <id>cmisbook:videoDuration</id>
+        <localName>videoDuration</localName>
+        <displayName>Video Duration</displayName>
+        <queryName>cmisbook:videoDuration</queryName>
+        <description>Video Duration</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+    <propertyDecimalDefinition>
+        <id>cmisbook:videoFramerate</id>
+        <localName>videoFramerate</localName>
+        <displayName>Framerate</displayName>
+        <queryName>cmisbook:videoFramerate</queryName>
+        <description>Video Framerate</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>decimal</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyDecimalDefinition>
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:album</id>
+    <localName>Album</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmisbook:media</parentId>
+    <displayName>Album</displayName>
+    <queryName>cmisbook:album</queryName>
+    <description>Album</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>false</versionable>
+    <contentStreamAllowed>notallowed</contentStreamAllowed>
+    <propertyIdDefinition>
+        <id>cmisbook:tracks</id>
+        <localName>Tracks</localName>
+        <displayName>Tracks</displayName>
+        <queryName>cmisbook:tracks</queryName>
+        <description>Tracks</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>id</propertyType>
+        <cardinality>multi</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIdDefinition>
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:pdf</id>
+    <localName>PDFDocument</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmis:document</parentId>
+    <displayName>PDF Document</displayName>
+    <queryName>cmisbook:pdf</queryName>
+    <description>PDF Document</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyIntegerDefinition>
+        <id>cmisbook:noPages</id>
+        <localName>NoPages</localName>
+        <displayName>No Pages</displayName>
+        <queryName>cmisbook:noPages</queryName>
+        <description>Number of pages in document</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:pdfTitle</id>
+        <localName>Title</localName>
+        <displayName>Title</displayName>
+        <queryName>cmisbook:pdfTitle</queryName>
+        <description>Title of document</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:pdfAuthor</id>
+        <localName>Author</localName>
+        <displayName>Author</displayName>
+        <queryName>cmisbook:pdfAuthor</queryName>
+        <description>Author of document</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:creator</id>
+        <localName>Creator</localName>
+        <displayName>Creator</displayName>
+        <queryName>cmisbook:creator</queryName>
+        <description>Creator of document</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:pdfKeywords</id>
+        <localName>Keywords</localName>
+        <displayName>Keywords</displayName>
+        <queryName>cmisbook:pdfKeywords</queryName>
+        <description>Keywords of document</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>multi</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:producer</id>
+        <localName>Producer</localName>
+        <displayName>Producer</displayName>
+        <queryName>cmisbook:producer</queryName>
+        <description>Producer of document</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:subject</id>
+        <localName>Subject</localName>
+        <displayName>Subject</displayName>
+        <queryName>cmisbook:subject</queryName>
+        <description>Subject of document</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyDateTimeDefinition>
+        <id>cmisbook:createdDate</id>
+        <localName>Created Date</localName>
+        <displayName>Created Date</displayName>
+        <queryName>cmisbook:createdDate</queryName>
+        <description>Creation date of document</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>datetime</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDateTimeDefinition>
+    <propertyDateTimeDefinition>
+        <id>cmisbook:modifiedDate</id>
+        <localName>Modified Date</localName>
+        <displayName>Modified Date</displayName>
+        <queryName>cmisbook:modifiedDate</queryName>
+        <description>Date of last modification</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>datetime</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDateTimeDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:trapped</id>
+        <localName>Trapped</localName>
+        <displayName>Trapped</displayName>
+        <queryName>cmisbook:trapped</queryName>
+        <description>Trapped</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:officeDocument</id>
+    <localName>OfficeDocument</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmis:document</parentId>
+    <displayName>Office Document</displayName>
+    <queryName>cmisbook:officeDocument</queryName>
+    <description>Document of type Office</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyStringDefinition>
+        <id>cmisbook:applicationName</id>
+        <localName>Application Name</localName>
+        <displayName>Application Name</displayName>
+        <queryName>cmisbook:applicationName</queryName>
+        <description>Application Name</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:applicationVersion</id>
+        <localName>Application Version</localName>
+        <displayName>Application Version</displayName>
+        <queryName>cmisbook:applicationVersion</queryName>
+        <description>Application Version</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:docAuthor</id>
+        <localName>Author</localName>
+        <displayName>Author</displayName>
+        <queryName>cmisbook:docAuthor</queryName>
+        <description>Author</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:category</id>
+        <localName>Category</localName>
+        <displayName>Category</displayName>
+        <queryName>cmisbook:category</queryName>
+        <description>Category</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:contentStatus</id>
+        <localName>Content Status</localName>
+        <displayName>Content Status</displayName>
+        <queryName>cmisbook:contentStatus</queryName>
+        <description>Content Status</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:comments</id>
+        <localName>Comments</localName>
+        <displayName>Comments</displayName>
+        <queryName>cmisbook:comments</queryName>
+        <description>Comments</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:company</id>
+        <localName>Company</localName>
+        <displayName>Company</displayName>
+        <queryName>cmisbook:company</queryName>
+        <description>Company</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:keywords</id>
+        <localName>Keywords</localName>
+        <displayName>Keywords</displayName>
+        <queryName>cmisbook:keywords</queryName>
+        <description>Keywords</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>multi</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:lastAuthor</id>
+        <localName>Last Author</localName>
+        <displayName>Last Author</displayName>
+        <queryName>cmisbook:lastAuthor</queryName>
+        <description>Last Author</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:manager</id>
+        <localName>Manager</localName>
+        <displayName>Manager</displayName>
+        <queryName>cmisbook:manager</queryName>
+        <description>Manager</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:notes</id>
+        <localName>Notes</localName>
+        <displayName>Notes</displayName>
+        <queryName>cmisbook:notes</queryName>
+        <description>Notes</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:presentationFormat</id>
+        <localName>Presentation Format</localName>
+        <displayName>Presentation Format</displayName>
+        <queryName>cmisbook:presentationFormat</queryName>
+        <description>Presentation Format</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:revisionNumber</id>
+        <localName>Revision Number</localName>
+        <displayName>Revision Number</displayName>
+        <queryName>cmisbook:revisionNumber</queryName>
+        <description>Revision Number</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:template</id>
+        <localName>Template</localName>
+        <displayName>Template</displayName>
+        <queryName>cmisbook:template</queryName>
+        <description>Template</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:version</id>
+        <localName>Version</localName>
+        <displayName>Version</displayName>
+        <queryName>cmisbook:version</queryName>
+        <description>Version</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:characterCount</id>
+        <localName>Character Count</localName>
+        <displayName>Character Count</displayName>
+        <queryName>cmisbook:characterCount</queryName>
+        <description>Character Count</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:characterCountWithSpaces</id>
+        <localName>Character Count With Spaces</localName>
+        <displayName>Character Count With Spaces</displayName>
+        <queryName>cmisbook:characterCountWithSpaces</queryName>
+        <description>Character Count With Spaces</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:wordCount</id>
+        <localName>Word Count</localName>
+        <displayName>Word Count</displayName>
+        <queryName>cmisbook:wordCount</queryName>
+        <description>Word Count</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:lineCount</id>
+        <localName>Line Count</localName>
+        <displayName>Line Count</displayName>
+        <queryName>cmisbook:lineCount</queryName>
+        <description>Line Count</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:pageCount</id>
+        <localName>Page Count</localName>
+        <displayName>Page Count</displayName>
+        <queryName>cmisbook:pageCount</queryName>
+        <description>Page Count</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:slideCount</id>
+        <localName>Slide Count</localName>
+        <displayName>Slide Count</displayName>
+        <queryName>cmisbook:slideCount</queryName>
+        <description>Slide Count</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyIntegerDefinition>
+        <id>cmisbook:paragraphCount</id>
+        <localName>Paragraph Count</localName>
+        <displayName>Paragraph Count</displayName>
+        <queryName>cmisbook:paragraphCount</queryName>
+        <description>Paragraph Count</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>integer</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyIntegerDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:totalTime</id>
+        <localName>Total Time</localName>
+        <displayName>Total Time</displayName>
+        <queryName>cmisbook:totalTime</queryName>
+        <description>Total Time</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:editTime</id>
+        <localName>Edit Time</localName>
+        <displayName>Edit Time</displayName>
+        <queryName>cmisbook:editTime</queryName>
+        <description>Edit Time</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+    <propertyDateTimeDefinition>
+        <id>cmisbook:creationDate</id>
+        <localName>Creation Date</localName>
+        <displayName>Creation Date</displayName>
+        <queryName>cmisbook:creationDate</queryName>
+        <description>Creation Date</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>datetime</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDateTimeDefinition>
+    <propertyDateTimeDefinition>
+        <id>cmisbook:lastSaveDate</id>
+        <localName>Last Save Date</localName>
+        <displayName>Last Save Date</displayName>
+        <queryName>cmisbook:lastSaveDate</queryName>
+        <description>Last Save Date</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>datetime</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyDateTimeDefinition>
+    <propertyStringDefinition>
+        <id>cmisbook:lastPrinted</id>
+        <localName>Last Printed</localName>
+        <displayName>Last Printed</displayName>
+        <queryName>cmisbook:lastPrinted</queryName>
+        <description>Last Printed</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>false</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:text</id>
+    <localName>TextDocument</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmis:document</parentId>
+    <displayName>Text Document</displayName>
+    <queryName>cmisbook:text</queryName>
+    <description>Text Document</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyStringDefinition>
+        <id>cmisbook:author</id>
+        <localName>author</localName>
+        <displayName>Author</displayName>
+        <queryName>cmisbook:author</queryName>
+        <description>Author</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>  
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:lyrics</id>
+    <localName>Lyrics</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmisbook:text</parentId>
+    <displayName>Lyrics</displayName>
+    <queryName>cmisbook:lyrics</queryName>
+    <description>Lyrics</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyStringDefinition>
+        <id>cmisbook:songtitle</id>
+        <localName>songtitle</localName>
+        <displayName>Song Title</displayName>
+        <queryName>cmisbook:songtitle</queryName>
+        <description>Song Title</description>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>  
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:poem</id>
+    <localName>Poem</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmisbook:text</parentId>
+    <displayName>Poem</displayName>
+    <queryName>cmisbook:poem</queryName>
+    <description>Poem</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyStringDefinition>
+        <id>cmisbook:poemtitle</id>
+        <localName>poemtitle</localName>
+        <displayName>Poem Title</displayName>
+        <queryName>cmisbook:poemtitle</queryName>
+        <description>Poem Title</description>
+        <propertyType>string</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyStringDefinition>  
+</cmisra:type>
+
+<cmisra:type xsi:type="cmisTypeDocumentDefinitionType">
+    <id>cmisbook:note</id>
+    <localName>Note</localName>
+    <localNamespace>http://example.org/cmisbook</localNamespace>
+    <parentId>cmis:document</parentId>
+    <displayName>Note</displayName>
+    <queryName>cmisbook:note</queryName>
+    <description>Note</description>
+    <baseId>cmis:document</baseId>
+    <creatable>true</creatable>
+    <fileable>true</fileable>
+    <queryable>true</queryable>
+    <fulltextIndexed>true</fulltextIndexed>
+    <includedInSupertypeQuery>true</includedInSupertypeQuery>
+    <controllablePolicy>false</controllablePolicy>
+    <controllableACL>true</controllableACL>
+    <versionable>true</versionable>
+    <contentStreamAllowed>allowed</contentStreamAllowed>
+    <propertyBooleanDefinition>
+        <id>cmisbook:noteArchived</id>
+        <localName>noteArchived</localName>
+        <displayName>Archived</displayName>
+        <queryName>cmisbook:noteArchived</queryName>
+        <description>Has this note been processed?</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>boolean</propertyType>
+        <cardinality>single</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>true</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+        <defaultValue>
+			<value>false</value>
+		</defaultValue>
+    </propertyBooleanDefinition>
+    <propertyDateTimeDefinition>
+        <id>cmisbook:noteReminders</id>
+        <localName>noteReminders</localName>
+        <displayName>Reminders</displayName>
+        <queryName>cmisbook:noteReminders</queryName>
+        <description>Note reminders</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>datetime</propertyType>
+        <cardinality>multi</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyDateTimeDefinition>
+     <propertyUriDefinition>
+        <id>cmisbook:noteLinks</id>
+        <localName>noteLinks</localName>
+        <displayName>Links</displayName>
+        <queryName>cmisbook:noteLinks</queryName>
+        <description>Links related to this note</description>
+        <localNamespace>http://example.org/cmisbook</localNamespace>
+        <propertyType>uri</propertyType>
+        <cardinality>multi</cardinality>
+        <updatability>readwrite</updatability>
+        <inherited>false</inherited>
+        <required>false</required>
+        <queryable>true</queryable>
+        <orderable>true</orderable>
+        <openChoice>false</openChoice>
+    </propertyUriDefinition>
+</cmisra:type>
+
+</chem:typeDefinitions>

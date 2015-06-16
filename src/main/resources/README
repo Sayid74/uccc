@@ -1,0 +1,21 @@
+This package contains the Apache Chemistry OpenCMIS InMemory Repository running on an embedded Apache Tomcat servlet engine.
+
+Licenses:
+
+Apache Chemistry OpenCMIS InMemory Repository (Apache Software Foundation) - Apache License, Version 2.0
+Apache Tomcat (Apache Software Foundation) - Apache License, Version 2.0
+Source Code (Manning Publications Co.) - Apache License, Version 2.0
+Dependencies Ð see DEPENDENCIES files in OpenCMIS Jars
+Repository Content - see content metadata
+
+
+For further information, please refer to these websites:
+
+Apache Chemistry:
+http://chemistry.apache.org
+
+Apache Tomcat:
+http://tomcat.apache.org
+
+CMIS and Apache Chemistry in Action
+http://www.manning.com/mueller

@@ -1,0 +1,2 @@
+2015-04-20 18:28:45,881 WARN  [localhost-startStop-1] org.apache.chemistry.opencmis.inmemory.server.InMemoryServiceFactoryImpl: Resource file with type definitions types.xml could not be found, no types will be created.
+2015-04-20 18:31:35,422 WARN  [localhost-startStop-1] org.apache.chemistry.opencmis.inmemory.server.InMemoryServiceFactoryImpl: Resource file with type definitions types.xml could not be found, no types will be created.
