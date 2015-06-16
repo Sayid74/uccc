@@ -33,9 +33,9 @@ import org.apache.chemistry.opencmis.commons.impl.ClassLoaderUtil;
 import org.apache.chemistry.opencmis.commons.impl.Constants;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
-import org.apache.chemistry.opencmis.server.impl.CallContextImpl;
-import org.apache.chemistry.opencmis.server.impl.CmisRepositoryContextListener;
-import org.apache.chemistry.opencmis.server.impl.browser.BrowserCallContextImpl;
+import com.ucap.uccc.server.cmis.impl.CallContextImpl;
+import com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener;
+import com.ucap.uccc.server.cmis.impl.browser.BrowserCallContextImpl;
 
 public abstract class AbstractCmisHttpServlet extends HttpServlet {
 

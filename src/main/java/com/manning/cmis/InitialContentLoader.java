@@ -31,8 +31,8 @@ import org.apache.chemistry.opencmis.commons.exceptions.CmisObjectNotFoundExcept
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
-import org.apache.chemistry.opencmis.server.impl.CallContextImpl;
-import org.apache.chemistry.opencmis.server.impl.ServerVersion;
+import com.ucap.uccc.server.cmis.impl.CallContextImpl;
+import com.ucap.uccc.server.cmis.impl.ServerVersion;
 import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
 
 /**
