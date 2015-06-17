@@ -9,6 +9,6 @@ package com.ucap.uccc.server;
  *
  * @author Sayid
  */
-public class DefaultConsts {
-	public static final String SOURCES_PATH="sources";	
+public final class DefaultConsts {
+	public static final String RESOURCES_PATH="resources";	
 }

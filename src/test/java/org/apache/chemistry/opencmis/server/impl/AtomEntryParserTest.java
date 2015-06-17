@@ -34,7 +34,7 @@ import org.apache.chemistry.opencmis.commons.data.ContentStream;
 import org.apache.chemistry.opencmis.commons.data.PropertyString;
 import org.apache.chemistry.opencmis.commons.impl.Base64;
 import org.apache.chemistry.opencmis.commons.impl.IOUtils;
-import org.apache.chemistry.opencmis.server.impl.atompub.AtomEntryParser;
+import com.ucap.uccc.server.cmis.impl.atompub.AtomEntryParser;
 import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
 import org.junit.Test;
 

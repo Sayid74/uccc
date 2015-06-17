@@ -31,7 +31,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.server.filter.ProxyHttpServletRequestWrapper;
-import org.apache.chemistry.opencmis.server.impl.atompub.AbstractAtomPubServiceCall;
+import com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;

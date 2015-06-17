@@ -18,6 +18,7 @@
  */
 package org.apache.chemistry.opencmis.server.impl;
 
+import com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -43,9 +44,9 @@ import org.apache.chemistry.opencmis.commons.data.CacheHeaderContentStream;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
-import org.apache.chemistry.opencmis.server.impl.atompub.AbstractAtomPubServiceCall;
-import org.apache.chemistry.opencmis.server.impl.atompub.CmisAtomPubServlet;
-import org.apache.chemistry.opencmis.server.impl.browser.CmisBrowserBindingServlet;
+import com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall;
+import com.ucap.uccc.server.cmis.impl.atompub.CmisAtomPubServlet;
+import com.ucap.uccc.server.cmis.impl.browser.CmisBrowserBindingServlet;
 import org.apache.chemistry.opencmis.server.shared.Dispatcher;
 import org.junit.Before;
 import org.junit.Test;
