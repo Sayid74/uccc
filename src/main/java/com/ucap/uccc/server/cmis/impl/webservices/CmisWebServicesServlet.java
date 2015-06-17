@@ -50,6 +50,11 @@ import com.sun.xml.ws.transport.http.servlet.ServletAdapter;
 import com.sun.xml.ws.transport.http.servlet.WSServlet;
 import com.sun.xml.ws.transport.http.servlet.WSServletDelegate;
 
+import static com.ucap.uccc.server.DefaultConsts.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
 public class CmisWebServicesServlet extends WSServlet {
 
     public static final String PARAM_CMIS_VERSION = "cmisVersion";
@@ -72,46 +77,53 @@ public class CmisWebServicesServlet extends WSServlet {
 
     private Map<String, String> docs;
 
+	private String resPathFor(ServletConfig config, String filename)
+	{
+		String rp = config.getInitParameter("RESOURCES_PATH");
+		if(rp == null || rp.trim().length() == 0) rp = RESOURCES_PATH;
+		StringBuilder sb = new StringBuilder(rp);
+		if (!rp.endsWith(File.separator)) sb.append(File.separator);
+		
+		return sb.append(filename).toString();
+	}
+
     @Override
     public void init(ServletConfig config) throws ServletException {
-
-        // get CMIS version
-        String cmisVersionStr = config.getInitParameter(PARAM_CMIS_VERSION);
-        if (cmisVersionStr != null) {
-            try {
-                cmisVersion = CmisVersion.fromValue(cmisVersionStr);
-            } catch (IllegalArgumentException e) {
-                LOG.warn("CMIS version is invalid! Setting it to CMIS 1.0.");
-                cmisVersion = CmisVersion.CMIS_1_0;
-            }
-        } else {
-            LOG.warn("CMIS version is not defined! Setting it to CMIS 1.0.");
-            cmisVersion = CmisVersion.CMIS_1_0;
-        }
-
         // set up WSDL and XSD documents
         docs = new HashMap<>();
 
-        String path = (cmisVersion == CmisVersion.CMIS_1_0 ? CMIS10_PATH : CMIS11_PATH);
-
-        docs.put("wsdl", readFile(config, path + "CMISWS-Service.wsdl.template"));
-        docs.put("core", readFile(config, path + "CMIS-Core.xsd.template"));
-        docs.put("msg", readFile(config, path + "CMIS-Messaging.xsd.template"));
+        docs.put("wsdl", readFile(resPathFor(config, "CMISWS-Service.wsdl")));
+        docs.put("core", readFile(resPathFor(config, "CMIS-Core.xsd")));
+        docs.put("msg", readFile(resPathFor(config, "CMIS-Messaging.xsd")));
 
         super.init(config);
     }
 
-    private String readFile(ServletConfig config, String path) throws ServletException {
-        InputStream stream = config.getServletContext().getResourceAsStream(path);
-        if (stream == null) {
-            throw new ServletException("Cannot find file '" + path + "'!");
-        }
-
-        try {
-            return IOUtils.readAllLines(stream);
-        } catch (IOException e) {
-            throw new ServletException("Cannot read file '" + path + "': " + e.getMessage(), e);
-        }
+    private String readFile(String path) throws ServletException {
+		InputStream is;
+		try {
+			is = new FileInputStream(path);
+		} catch (FileNotFoundException ex) {
+			java.util.logging.Logger.getLogger(CmisWebServicesServlet.class.getName()).log(Level.SEVERE, null, ex);
+			throw new ServletException("The resourece " + path + " can't be matched.");
+		}
+        String s = null;
+		try {
+			s = IOUtils.readAllLines(is);
+		} catch (IOException ex) {
+			java.util.logging.Logger.getLogger(CmisWebServicesServlet.class.getName()).log(Level.SEVERE, null, ex);
+			throw new ServletException(ex);
+		}
+		finally
+		{
+			try {
+				is.close();
+			} catch (IOException ex) {
+				java.util.logging.Logger.getLogger(CmisWebServicesServlet.class.getName()).log(Level.SEVERE, null, ex);
+				throw new ServletException(ex);
+			}
+		}
+		return s == null? "": s;
     }
 
     @Override
