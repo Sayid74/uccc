@@ -41,7 +41,7 @@ public class CallContextImpl implements MutableCallContext {
 
     private final String binding;
     private final boolean objectInfoRequired;
-    private final Map<String, Object> parameter = new HashMap<String, Object>();
+    private final Map<String, Object> parameter = new HashMap<>();
 
     public CallContextImpl(String binding, CmisVersion cmisVersion, String repositoryId, ServletContext servletContext,
             HttpServletRequest request, HttpServletResponse response, CmisServiceFactory factory,
