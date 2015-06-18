@@ -134,14 +134,15 @@ public class Server {
 	private void createWebApp(Tomcat tomcat) throws Exception {
 		System.out.println(new File(".").getAbsolutePath());
 		Context ctx = tomcat.addContext("/", new File(".").getAbsolutePath());
+		addRepositoryContextListener(ctx);
+		addWSServletContextListener(ctx);
+
 		/*
 		addCmis10(ctx);
 		this.addCmis11(ctx);
 		this.addCmisAtom10(ctx);
-		this.addCmisAtom11(ctx);
 		*/
-		addRepositoryContextListener(ctx);
-		addWSServletContextListener(ctx);
+		addCmisAtom11(ctx);
 		addCmisbrowser(ctx);
 
 		factory = (CmisServiceFactory) ctx.getServletContext().getAttribute(SERVICES_FACTORY);
@@ -401,6 +402,7 @@ public class Server {
        		<listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
     	</listener>
 		**/
-		context.addApplicationListener("com.ucap.uccc.server.cmis.impl.WSServletContextListener");
+		
+		//context.addApplicationListener("com.sun.xml.ws.transport.http.servlet.WSServletContextListener");
 	}
 }

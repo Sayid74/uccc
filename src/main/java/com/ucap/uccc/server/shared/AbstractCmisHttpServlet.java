@@ -36,6 +36,7 @@ import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.CallContextImpl;
 import com.ucap.uccc.server.cmis.impl.browser.BrowserCallContextImpl;
 import static com.ucap.uccc.server.DefaultConsts.*;
+import com.ucap.uccc.server.cmis.impl.browser.token.TokenCallContextHandler;
 
 public abstract class AbstractCmisHttpServlet extends HttpServlet {
 
@@ -52,20 +53,10 @@ public abstract class AbstractCmisHttpServlet extends HttpServlet {
         super.init(config);
 
         // initialize the call context handler
-        callContextHandler = null;
-        String callContextHandlerClass = config.getInitParameter(CNPRM_CALL_CONTEXT_HANDLER);
-        if (callContextHandlerClass != null) {
-            try {
-                callContextHandler = (CallContextHandler) ClassLoaderUtil.loadClass(callContextHandlerClass)
-                        .newInstance();
-            } catch (Exception e) {
-                throw new ServletException("Could not load call context handler: " + e, e);
-            }
-        }
+        callContextHandler = new TokenCallContextHandler();
 
         // get service factory
-        factory = (CmisServiceFactory) config.getServletContext().getAttribute(
-                SERVICES_FACTORY);
+        factory = (CmisServiceFactory) config.getServletContext().getAttribute(SERVICES_FACTORY);
 
         if (factory == null) {
             throw new CmisRuntimeException("Service factory not available! Configuration problem?");

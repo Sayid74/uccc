@@ -80,12 +80,16 @@ public class CmisWebServicesServlet extends WSServlet {
 
 	private String resPathFor(ServletConfig config, String filename)
 	{
-		String rp = config.getInitParameter("RESOURCES_PATH");
-		if(rp == null || rp.trim().length() == 0) rp = RESOURCES_PATH;
-		StringBuilder sb = new StringBuilder(rp);
-		if (!rp.endsWith(File.separator)) sb.append(File.separator);
-		
-		return sb.append(filename).toString();
+		String rp = config.getInitParameter("resourece.path");
+		if(rp == null || rp.trim().length() == 0)
+		{
+			return pathOfSource(filename);
+		}
+		else
+		{
+			String s = File.separator;
+			return (rp.endsWith(s)) ? rp + filename : rp + s + filename;
+		}
 	}
 
     @Override

@@ -1,3 +1,23 @@
 2015-06-14 21:18:40,965 WARN : CMIS version is not defined! Setting it to CMIS 1.0.
 2015-06-16 11:42:45,822 WARN : CMIS version is not defined! Setting it to CMIS 1.0.
 2015-06-18 19:47:01,242 WARN  [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Cannot find configuration!
+2015-06-19 01:17:18,171 WARN  [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Cannot find configuration!
+2015-06-19 01:18:05,873 WARN  [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Cannot find configuration!
+2015-06-19 01:35:29,187 WARN  [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Cannot find configuration!
+2015-06-19 01:35:57,882 WARN  [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Cannot find configuration!
+2015-06-19 01:37:19,719 WARN  [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Cannot find configuration!
+2015-06-19 01:41:10,220 WARN  [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Cannot find configuration!
+2015-06-19 01:45:34,735 WARN  [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Cannot find configuration!
+2015-06-19 02:21:52,800 ERROR [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Service factory couldn't be created: java.lang.RuntimeException: Uncompilable source code - 可能尚未初始化变量stream
+java.lang.RuntimeException: Uncompilable source code - 可能尚未初始化变量stream
+	at com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener.createServiceFactory(CmisRepositoryContextListener.java:108)
+	at com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener.contextInitialized(CmisRepositoryContextListener.java:63)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4729)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5167)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1399)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)

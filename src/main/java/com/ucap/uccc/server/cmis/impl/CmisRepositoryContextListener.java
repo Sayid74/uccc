@@ -35,6 +35,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static com.ucap.uccc.server.DefaultConsts.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
 
 /**
  * CMIS context listener.
@@ -90,12 +94,17 @@ public class CmisRepositoryContextListener implements ServletContextListener {
      */
     private CmisServiceFactory createServiceFactory(String filename) {
         // load properties
-        InputStream stream = this.getClass().getResourceAsStream(filename);
-
-        if (stream == null) {
-            _LOG.warn("Cannot find configuration!");
-            return null;
-        }
+		String repositoryPath = pathOfSource(filename);
+		System.out.println(">>> repository: " + repositoryPath);
+		File f = new File(repositoryPath);
+		System.out.println(">>> absolute path: " + f.getAbsolutePath());
+        InputStream stream = null;
+		try {
+			stream = new FileInputStream(f);
+		} catch (FileNotFoundException ex) {
+			java.util.logging.Logger.getLogger(CmisRepositoryContextListener.class.getName()).log(Level.SEVERE, null, ex);
+			return null;
+		}
 
         Properties props = new Properties();
         try {
