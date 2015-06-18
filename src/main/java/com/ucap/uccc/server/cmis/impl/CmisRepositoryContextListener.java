@@ -44,9 +44,10 @@ public class CmisRepositoryContextListener implements ServletContextListener {
     private static final Logger LOG = LoggerFactory.getLogger(CmisRepositoryContextListener.class.getName());
 
     private static final String CONFIG_INIT_PARAM = "org.apache.chemistry.opencmis.REPOSITORY_CONFIG_FILE";
-    private static final String CONFIG_FILENAME = "/repository.properties";
+    private static final String CONFIG_FILENAME = "repository.properties";
     private static final String PROPERTY_CLASS = "class";
 
+	@Override
     public void contextInitialized(ServletContextEvent sce) {
         // get config file name or use default
         String configFilename = sce.getServletContext().getInitParameter(CONFIG_INIT_PARAM);
@@ -67,6 +68,11 @@ public class CmisRepositoryContextListener implements ServletContextListener {
         sce.getServletContext().setAttribute(SERVICES_FACTORY, factory);
     }
 
+	/**
+	 *
+	 * @param sce
+	 */
+	@Override
     public void contextDestroyed(ServletContextEvent sce) {
         // destroy services factory
         CmisServiceFactory factory = (CmisServiceFactory) sce.getServletContext().getAttribute(SERVICES_FACTORY);
@@ -75,7 +81,6 @@ public class CmisRepositoryContextListener implements ServletContextListener {
                 factory.destroy();
             } catch (Exception e) {
                 LOG.error("Service factory couldn't be destroyed: " + e.toString(), e);
-                return;
             }
         }
     }
@@ -113,7 +118,7 @@ public class CmisRepositoryContextListener implements ServletContextListener {
         Object object = null;
         try {
             object = ClassLoaderUtil.loadClass(className).newInstance();
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             LOG.warn("Could not create a services factory instance: " + e, e);
             return null;
         }
@@ -125,7 +130,7 @@ public class CmisRepositoryContextListener implements ServletContextListener {
         CmisServiceFactory factory = (CmisServiceFactory) object;
 
         // initialize factory instance
-        Map<String, String> parameters = new HashMap<String, String>();
+        Map<String, String> parameters = new HashMap<>();
 
         for (Enumeration<?> e = props.propertyNames(); e.hasMoreElements();) {
             String key = (String) e.nextElement();

@@ -77,6 +77,7 @@ public class ObjectService {
      * Create.
      */
     public static class Create extends AbstractAtomPubServiceCall {
+		@Override
         public void serve(CallContext context, CmisService service, String repositoryId, HttpServletRequest request,
                 HttpServletResponse response) throws Exception {
             assert context != null;
@@ -130,7 +131,7 @@ public class ObjectService {
                     newObjectId = objectId;
                 } else {
                     // move
-                    Holder<String> objectIdHolder = new Holder<String>(objectId);
+                    Holder<String> objectIdHolder = new Holder<>(objectId);
                     service.moveObject(repositoryId, objectIdHolder, folderId, sourceFolderId, null);
                     newObjectId = objectIdHolder.getValue();
                 }
@@ -554,6 +555,7 @@ public class ObjectService {
      * Allowable Actions.
      */
     public static class GetAllowableActions extends AbstractAtomPubServiceCall {
+		@Override
         public void serve(CallContext context, CmisService service, String repositoryId, HttpServletRequest request,
                 HttpServletResponse response) throws Exception {
             assert context != null;
