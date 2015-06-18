@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.manning.cmis;
+package com.ucap.uccc.main;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -28,8 +28,6 @@ import java.util.zip.ZipInputStream;
 import javax.servlet.http.HttpServlet;
 
 import org.apache.catalina.Context;
-import org.apache.catalina.Engine;
-import org.apache.catalina.Host;
 import org.apache.catalina.Wrapper;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
@@ -43,6 +41,8 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.tomcat.util.descriptor.web.FilterDef;
 import org.apache.tomcat.util.descriptor.web.FilterMap;
+
+import static com.ucap.uccc.server.DefaultConsts.*;
 
 public class Server {
 
@@ -137,7 +137,7 @@ public class Server {
 		*/
 
 		CmisServiceFactory factory = (CmisServiceFactory) ctx
-			.getServletContext().getAttribute(CmisRepositoryContextListener.SERVICES_FACTORY);
+			.getServletContext().getAttribute(SERVICES_FACTORY);
 			
         ThresholdOutputStreamFactory streamFactory = ThresholdOutputStreamFactory.newInstance(null, THRESHOLD,
                 MAX_SIZE, false);

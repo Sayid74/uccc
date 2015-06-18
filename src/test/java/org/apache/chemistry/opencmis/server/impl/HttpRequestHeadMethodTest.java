@@ -52,6 +52,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import static com.ucap.uccc.server.DefaultConsts.*;
 
 public class HttpRequestHeadMethodTest {
     private static final String CONTEXT_PATH = "/context";
@@ -88,7 +89,7 @@ public class HttpRequestHeadMethodTest {
         when(this.request.getServerPort()).thenReturn(BACKEND_SERVER_PORT);
         when(this.request.getContextPath()).thenReturn(CONTEXT_PATH);
         when(this.config.getServletContext()).thenReturn(context);
-        when(this.context.getAttribute(CmisRepositoryContextListener.SERVICES_FACTORY)).thenReturn(cmisServiceFactory);
+        when(this.context.getAttribute(SERVICES_FACTORY)).thenReturn(cmisServiceFactory);
         when(cmisServiceFactory.getService((CallContext) any())).thenReturn(cmisService);
     }
 

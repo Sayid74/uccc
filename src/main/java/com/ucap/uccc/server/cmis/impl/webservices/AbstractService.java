@@ -59,6 +59,7 @@ import com.ucap.uccc.server.shared.ExceptionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;
+import static com.ucap.uccc.server.DefaultConsts.*;
 
 /**
  * This class contains operations used by all services.
@@ -78,7 +79,7 @@ public abstract class AbstractService {
 
         // get services factory
         CmisServiceFactory factory = (CmisServiceFactory) servletContext
-                .getAttribute(CmisRepositoryContextListener.SERVICES_FACTORY);
+                .getAttribute(SERVICES_FACTORY);
 
         if (factory == null) {
             throw new CmisRuntimeException("Service factory not available! Configuration problem?");

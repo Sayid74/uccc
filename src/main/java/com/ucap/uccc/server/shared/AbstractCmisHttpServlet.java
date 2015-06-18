@@ -34,8 +34,8 @@ import org.apache.chemistry.opencmis.commons.impl.Constants;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.CallContextImpl;
-import com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener;
 import com.ucap.uccc.server.cmis.impl.browser.BrowserCallContextImpl;
+import static com.ucap.uccc.server.DefaultConsts.*;
 
 public abstract class AbstractCmisHttpServlet extends HttpServlet {
 
@@ -68,7 +68,7 @@ public abstract class AbstractCmisHttpServlet extends HttpServlet {
 
         // get service factory
         factory = (CmisServiceFactory) config.getServletContext().getAttribute(
-                CmisRepositoryContextListener.SERVICES_FACTORY);
+                SERVICES_FACTORY);
 
         if (factory == null) {
             throw new CmisRuntimeException("Service factory not available! Configuration problem?");

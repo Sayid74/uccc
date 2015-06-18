@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.manning.cmis;
+package com.ucap.uccc.main;
 
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;

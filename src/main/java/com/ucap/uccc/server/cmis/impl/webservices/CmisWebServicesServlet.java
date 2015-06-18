@@ -55,6 +55,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
+import static com.ucap.uccc.server.DefaultConsts.*;
 public class CmisWebServicesServlet extends WSServlet {
 
     public static final String PARAM_CMIS_VERSION = "cmisVersion";
@@ -262,7 +263,7 @@ public class CmisWebServicesServlet extends WSServlet {
         if (delegate.adapters != null) {
             // get the CmisService factory
             CmisServiceFactory factory = (CmisServiceFactory) getServletContext().getAttribute(
-                    CmisRepositoryContextListener.SERVICES_FACTORY);
+                    SERVICES_FACTORY);
 
             if (factory == null) {
                 throw new CmisRuntimeException("Service factory not available! Configuration problem?");

@@ -41,6 +41,7 @@ import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener;
 import com.ucap.uccc.server.cmis.impl.browser.AbstractBrowserServiceCall;
+import static com.ucap.uccc.server.DefaultConsts.*;
 
 public abstract class AbstractSimpleTokenHandler implements TokenHandler, Serializable {
 
@@ -332,7 +333,7 @@ public abstract class AbstractSimpleTokenHandler implements TokenHandler, Serial
 
     protected CmisServiceFactory getCmisServiceFactory(final ServletContext servletContext) {
         CmisServiceFactory factory = (CmisServiceFactory) servletContext
-                .getAttribute(CmisRepositoryContextListener.SERVICES_FACTORY);
+                .getAttribute(SERVICES_FACTORY);
 
         if (factory == null) {
             throw new CmisRuntimeException("Service factory not available! Configuration problem?");

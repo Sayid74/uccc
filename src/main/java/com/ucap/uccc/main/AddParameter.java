@@ -1,4 +1,4 @@
-package com.manning.cmis;
+package com.ucap.uccc.main;
 
 import java.io.File;
 
