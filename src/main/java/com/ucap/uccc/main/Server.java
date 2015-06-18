@@ -140,7 +140,9 @@ public class Server {
 		this.addCmisAtom10(ctx);
 		this.addCmisAtom11(ctx);
 		*/
-		this.addCmisbrowser(ctx);
+		addRepositoryContextListener(ctx);
+		addWSServletContextListener(ctx);
+		addCmisbrowser(ctx);
 
 		factory = (CmisServiceFactory) ctx.getServletContext().getAttribute(SERVICES_FACTORY);
         streamFactory = ThresholdOutputStreamFactory.newInstance(null, THRESHOLD, MAX_SIZE, false);
@@ -390,7 +392,15 @@ public class Server {
         	<listener-class>org.apache.chemistry.opencmis.server.impl.CmisRepositoryContextListener</listener-class>
     	</listener>
 		**/
-		context.
+		context.addApplicationListener("com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener");
 	}
 	
+	private void addWSServletContextListener(Context context) {
+		/**
+		<listener>
+       		<listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+    	</listener>
+		**/
+		context.addApplicationListener("com.ucap.uccc.server.cmis.impl.WSServletContextListener");
+	}
 }

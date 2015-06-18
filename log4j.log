@@ -1,2 +1,3 @@
 2015-06-14 21:18:40,965 WARN : CMIS version is not defined! Setting it to CMIS 1.0.
 2015-06-16 11:42:45,822 WARN : CMIS version is not defined! Setting it to CMIS 1.0.
+2015-06-18 19:47:01,242 WARN  [localhost-startStop-1] com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener: Cannot find configuration!
