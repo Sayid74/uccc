@@ -28,8 +28,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.chemistry.opencmis.commons.exceptions.CmisPermissionDeniedException;
 import org.apache.chemistry.opencmis.commons.impl.Constants;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
-import org.apache.chemistry.opencmis.server.shared.BasicAuthCallContextHandler;
-import org.apache.chemistry.opencmis.server.shared.HttpUtils;
+import com.ucap.uccc.server.shared.BasicAuthCallContextHandler;
+import com.ucap.uccc.server.shared.HttpUtils;
 
 public class TokenCallContextHandler extends BasicAuthCallContextHandler implements TokenHandler {
 

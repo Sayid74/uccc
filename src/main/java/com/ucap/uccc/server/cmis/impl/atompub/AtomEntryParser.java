@@ -55,9 +55,9 @@ import org.apache.chemistry.opencmis.commons.impl.dataobjects.BulkUpdateImpl;
 import org.apache.chemistry.opencmis.commons.impl.dataobjects.ContentStreamImpl;
 import org.apache.chemistry.opencmis.commons.impl.dataobjects.PropertiesImpl;
 import org.apache.chemistry.opencmis.commons.impl.dataobjects.PropertyStringImpl;
-import org.apache.chemistry.opencmis.server.shared.CappedInputStream;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStream;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
+import com.ucap.uccc.server.shared.CappedInputStream;
+import com.ucap.uccc.server.shared.ThresholdOutputStream;
+import com.ucap.uccc.server.shared.ThresholdOutputStreamFactory;
 
 /**
  * Parser for Atom Entries.

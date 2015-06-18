@@ -16,21 +16,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.chemistry.opencmis.server.shared;
-
-import java.util.Map;
+package com.ucap.uccc.server.shared;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.chemistry.opencmis.commons.server.CallContext;
+import org.apache.chemistry.opencmis.commons.server.CmisService;
 
-/**
- * Call Context handler interface.
- */
-public interface CallContextHandler {
+public interface ServiceCall {
 
     /**
-     * Returns key-value pairs that will be added to the {@link CallContext}.
+     * Serves an AtomPub or Browser binding call.
      */
-    Map<String, String> getCallContextMap(HttpServletRequest request);
+    void serve(CallContext context, CmisService service, String repositoryId, HttpServletRequest request,
+            HttpServletResponse response) throws Exception;
 }

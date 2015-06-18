@@ -33,7 +33,7 @@ import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.CallContextImpl;
 import com.ucap.uccc.server.cmis.impl.ServerVersion;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
+import com.ucap.uccc.server.shared.ThresholdOutputStreamFactory;
 
 /**
  * Loads the content of Zip file into the InMemory repository using the OpenCMIS

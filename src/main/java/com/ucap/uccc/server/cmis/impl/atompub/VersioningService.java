@@ -33,7 +33,7 @@ import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.server.ObjectInfo;
 import org.apache.chemistry.opencmis.commons.spi.Holder;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
+import com.ucap.uccc.server.shared.ThresholdOutputStreamFactory;
 
 /**
  * Versioning Service operations.

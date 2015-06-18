@@ -70,9 +70,9 @@ import static org.apache.chemistry.opencmis.commons.impl.Constants.SELECTOR_VERS
 import static org.apache.chemistry.opencmis.commons.impl.JSONConstants.ERROR_EXCEPTION;
 import static org.apache.chemistry.opencmis.commons.impl.JSONConstants.ERROR_MESSAGE;
 import static org.apache.chemistry.opencmis.commons.impl.JSONConstants.ERROR_STACKTRACE;
-import static org.apache.chemistry.opencmis.server.shared.Dispatcher.METHOD_GET;
-import static org.apache.chemistry.opencmis.server.shared.Dispatcher.METHOD_HEAD;
-import static org.apache.chemistry.opencmis.server.shared.Dispatcher.METHOD_POST;
+import static com.ucap.uccc.server.shared.Dispatcher.METHOD_GET;
+import static com.ucap.uccc.server.shared.Dispatcher.METHOD_HEAD;
+import static com.ucap.uccc.server.shared.Dispatcher.METHOD_POST;
 
 import java.io.IOException;
 
@@ -104,14 +104,14 @@ import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import com.ucap.uccc.server.cmis.impl.ServerVersion;
 import com.ucap.uccc.server.cmis.impl.browser.token.TokenHandler;
-import org.apache.chemistry.opencmis.server.shared.AbstractCmisHttpServlet;
-import org.apache.chemistry.opencmis.server.shared.Dispatcher;
-import org.apache.chemistry.opencmis.server.shared.ExceptionHelper;
-import org.apache.chemistry.opencmis.server.shared.HEADHttpServletRequestWrapper;
-import org.apache.chemistry.opencmis.server.shared.HttpUtils;
-import org.apache.chemistry.opencmis.server.shared.NoBodyHttpServletResponseWrapper;
-import org.apache.chemistry.opencmis.server.shared.QueryStringHttpServletRequestWrapper;
-import org.apache.chemistry.opencmis.server.shared.ServiceCall;
+import com.ucap.uccc.server.shared.AbstractCmisHttpServlet;
+import com.ucap.uccc.server.shared.Dispatcher;
+import com.ucap.uccc.server.shared.ExceptionHelper;
+import com.ucap.uccc.server.shared.HEADHttpServletRequestWrapper;
+import com.ucap.uccc.server.shared.HttpUtils;
+import com.ucap.uccc.server.shared.NoBodyHttpServletResponseWrapper;
+import com.ucap.uccc.server.shared.QueryStringHttpServletRequestWrapper;
+import com.ucap.uccc.server.shared.ServiceCall;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

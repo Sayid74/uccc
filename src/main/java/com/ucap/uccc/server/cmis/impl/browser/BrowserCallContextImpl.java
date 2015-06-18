@@ -36,7 +36,7 @@ import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.CallContextImpl;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
+import com.ucap.uccc.server.shared.ThresholdOutputStreamFactory;
 
 /**
  * A {@link CallContext} implementation that holds browser binding specific

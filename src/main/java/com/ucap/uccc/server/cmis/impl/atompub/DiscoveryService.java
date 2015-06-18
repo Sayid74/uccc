@@ -42,7 +42,7 @@ import org.apache.chemistry.opencmis.commons.impl.dataobjects.QueryTypeImpl;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.spi.Holder;
-import org.apache.chemistry.opencmis.server.shared.Dispatcher;
+import com.ucap.uccc.server.shared.Dispatcher;
 
 /**
  * Discovery Service operations.

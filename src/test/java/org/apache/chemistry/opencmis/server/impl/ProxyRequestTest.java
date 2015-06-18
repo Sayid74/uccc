@@ -30,7 +30,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
-import org.apache.chemistry.opencmis.server.filter.ProxyHttpServletRequestWrapper;
+import com.ucap.uccc.server.filter.ProxyHttpServletRequestWrapper;
 import com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall;
 import org.junit.Before;
 import org.junit.Test;

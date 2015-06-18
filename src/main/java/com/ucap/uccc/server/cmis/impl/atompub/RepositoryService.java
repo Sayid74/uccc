@@ -39,7 +39,7 @@ import org.apache.chemistry.opencmis.commons.impl.UrlBuilder;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import com.ucap.uccc.server.cmis.impl.CallContextImpl;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
+import com.ucap.uccc.server.shared.ThresholdOutputStreamFactory;
 
 /**
  * Repository Service operations.

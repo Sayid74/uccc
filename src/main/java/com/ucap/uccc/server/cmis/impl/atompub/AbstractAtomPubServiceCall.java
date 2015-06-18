@@ -47,8 +47,8 @@ import org.apache.chemistry.opencmis.commons.server.LinkInfo;
 import org.apache.chemistry.opencmis.commons.server.NamespaceDefinitions;
 import org.apache.chemistry.opencmis.commons.server.ObjectInfo;
 import org.apache.chemistry.opencmis.commons.server.RenditionInfo;
-import org.apache.chemistry.opencmis.server.shared.AbstractServiceCall;
-import org.apache.chemistry.opencmis.server.shared.Dispatcher;
+import com.ucap.uccc.server.shared.AbstractServiceCall;
+import com.ucap.uccc.server.shared.Dispatcher;
 
 public abstract class AbstractAtomPubServiceCall extends AbstractServiceCall {
 

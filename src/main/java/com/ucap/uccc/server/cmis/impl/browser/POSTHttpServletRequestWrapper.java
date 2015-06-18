@@ -28,9 +28,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.chemistry.opencmis.commons.impl.Constants;
 import org.apache.chemistry.opencmis.commons.impl.IOUtils;
-import org.apache.chemistry.opencmis.server.shared.HttpUtils;
-import org.apache.chemistry.opencmis.server.shared.QueryStringHttpServletRequestWrapper;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
+import com.ucap.uccc.server.shared.HttpUtils;
+import com.ucap.uccc.server.shared.QueryStringHttpServletRequestWrapper;
+import com.ucap.uccc.server.shared.ThresholdOutputStreamFactory;
 
 public final class POSTHttpServletRequestWrapper extends QueryStringHttpServletRequestWrapper {
     private String filename;

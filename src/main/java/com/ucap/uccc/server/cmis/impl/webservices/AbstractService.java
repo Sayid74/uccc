@@ -55,7 +55,7 @@ import org.apache.chemistry.opencmis.commons.server.ProgressControlCmisService.P
 import com.ucap.uccc.server.cmis.impl.CallContextImpl;
 import com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener;
 import com.ucap.uccc.server.cmis.impl.ServerVersion;
-import org.apache.chemistry.opencmis.server.shared.ExceptionHelper;
+import com.ucap.uccc.server.shared.ExceptionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.chemistry.opencmis.server.shared;
+package com.ucap.uccc.server.shared;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

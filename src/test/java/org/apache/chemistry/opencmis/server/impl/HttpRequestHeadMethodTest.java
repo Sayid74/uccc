@@ -47,7 +47,7 @@ import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall;
 import com.ucap.uccc.server.cmis.impl.atompub.CmisAtomPubServlet;
 import com.ucap.uccc.server.cmis.impl.browser.CmisBrowserBindingServlet;
-import org.apache.chemistry.opencmis.server.shared.Dispatcher;
+import com.ucap.uccc.server.shared.Dispatcher;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;

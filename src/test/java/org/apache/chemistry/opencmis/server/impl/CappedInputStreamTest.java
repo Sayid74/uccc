@@ -22,7 +22,7 @@ import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 
-import org.apache.chemistry.opencmis.server.shared.CappedInputStream;
+import com.ucap.uccc.server.shared.CappedInputStream;
 import org.junit.Test;
 
 public class CappedInputStreamTest {

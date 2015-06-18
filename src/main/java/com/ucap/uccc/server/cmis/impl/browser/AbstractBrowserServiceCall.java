@@ -68,8 +68,8 @@ import org.apache.chemistry.opencmis.commons.impl.dataobjects.PropertyUriImpl;
 import org.apache.chemistry.opencmis.commons.impl.json.JSONObject;
 import org.apache.chemistry.opencmis.commons.impl.json.JSONStreamAware;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
-import org.apache.chemistry.opencmis.server.shared.AbstractServiceCall;
-import org.apache.chemistry.opencmis.server.shared.Dispatcher;
+import com.ucap.uccc.server.shared.AbstractServiceCall;
+import com.ucap.uccc.server.shared.Dispatcher;
 
 public abstract class AbstractBrowserServiceCall extends AbstractServiceCall {
 

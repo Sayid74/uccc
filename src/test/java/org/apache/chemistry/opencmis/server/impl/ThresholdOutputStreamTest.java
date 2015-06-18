@@ -27,9 +27,9 @@ import static org.junit.Assert.fail;
 
 import java.io.File;
 
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStream;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStream.ThresholdInputStream;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
+import com.ucap.uccc.server.shared.ThresholdOutputStream;
+import com.ucap.uccc.server.shared.ThresholdOutputStream.ThresholdInputStream;
+import com.ucap.uccc.server.shared.ThresholdOutputStreamFactory;
 import org.junit.Test;
 
 public class ThresholdOutputStreamTest {

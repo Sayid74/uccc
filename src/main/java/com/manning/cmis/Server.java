@@ -37,7 +37,7 @@ import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener;
 import com.ucap.uccc.server.cmis.impl.atompub.CmisAtomPubServlet;
 import com.ucap.uccc.server.cmis.impl.webservices.CmisWebServicesServlet;
-import org.apache.chemistry.opencmis.server.shared.ThresholdOutputStreamFactory;
+import com.ucap.uccc.server.shared.ThresholdOutputStreamFactory;
 import org.apache.chemistry.opencmis.server.support.filter.LoggingFilter;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;

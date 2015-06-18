@@ -39,7 +39,7 @@ import org.apache.chemistry.opencmis.commons.impl.IOUtils;
 import org.apache.chemistry.opencmis.commons.impl.UrlBuilder;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener;
-import org.apache.chemistry.opencmis.server.shared.Dispatcher;
+import com.ucap.uccc.server.shared.Dispatcher;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -27,7 +27,7 @@ import java.net.URLEncoder;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.chemistry.opencmis.commons.exceptions.CmisInvalidArgumentException;
-import org.apache.chemistry.opencmis.server.shared.HttpUtils;
+import com.ucap.uccc.server.shared.HttpUtils;
 import org.junit.Test;
 import org.mockito.Mockito;
 

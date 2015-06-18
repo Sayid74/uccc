@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.chemistry.opencmis.server.filter;
+package com.ucap.uccc.server.filter;
 
 import java.io.IOException;
 import java.util.regex.Pattern;
