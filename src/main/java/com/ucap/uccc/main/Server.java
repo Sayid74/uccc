@@ -111,36 +111,39 @@ public class Server {
 		
 		tomcat = new Tomcat();
 		tomcat.setPort(_PORT);
-		//tomcat.setSilent(true);
 
-		System.out.println("====================================");
-		System.out.println("base dir: " + baseDir.getCanonicalPath());
-		System.out.println("====================================");
-		//tomcat.setBaseDir(baseDir.getCanonicalPath());
-		//tomcat.getHost().setAppBase(webDir.getCanonicalPath());
-
-		createWebApp(tomcat); //unzip cmis-server into webDir
+		createWebApp(tomcat);
 	}
+
+	public CmisServiceFactory getCmisFactory()
+	{
+		return this.factory;
+	}
+
+	public ThresholdOutputStreamFactory getStreamFactory()
+	{
+		return this.streamFactory;
+	}
+
 
 	/**
 	 * Creates the web app directory and unpacks the web app content.
 	 */
+	private CmisServiceFactory factory;
+	private ThresholdOutputStreamFactory streamFactory;
 	private void createWebApp(Tomcat tomcat) throws Exception {
 		System.out.println(new File(".").getAbsolutePath());
 		Context ctx = tomcat.addContext("/", new File(".").getAbsolutePath());
-		addCmis10(ctx);
 		/*
+		addCmis10(ctx);
 		this.addCmis11(ctx);
 		this.addCmisAtom10(ctx);
 		this.addCmisAtom11(ctx);
-		this.addCmisbrowser(ctx);
 		*/
+		this.addCmisbrowser(ctx);
 
-		CmisServiceFactory factory = (CmisServiceFactory) ctx
-			.getServletContext().getAttribute(SERVICES_FACTORY);
-			
-        ThresholdOutputStreamFactory streamFactory = ThresholdOutputStreamFactory.newInstance(null, THRESHOLD,
-                MAX_SIZE, false);
+		factory = (CmisServiceFactory) ctx.getServletContext().getAttribute(SERVICES_FACTORY);
+        streamFactory = ThresholdOutputStreamFactory.newInstance(null, THRESHOLD, MAX_SIZE, false);
 
 		startTomcat(tomcat, ctx);
 		loadInitialContent(tomcat);
@@ -335,7 +338,7 @@ public class Server {
 		 **/
 		HttpServlet servlet = new CmisAtomPubServlet();
 		Wrapper wrapper = Tomcat.addServlet(context, "cmisatom10", servlet);
-		wrapper.addInitParameter("callContextHandler", "org.apache.chemistry.opencmis.server.shared.BasicAuthcallContextHandler");
+		wrapper.addInitParameter("callContextHandler", "com.ucap.uccc.server.shared.BasicAuthcallContextHandler");
 		wrapper.addInitParameter("cmisVersion", "1.0");
 		wrapper.setLoadOnStartup(2);
 		context.addServletMapping("/cmisatom10", "cmisatom10");
@@ -357,7 +360,7 @@ public class Server {
 		 **/
 		HttpServlet servlet = new CmisAtomPubServlet();
 		Wrapper wrapper = Tomcat.addServlet(context, "cmisatom11", servlet);
-		wrapper.addInitParameter("callContextHandler", "org.apache.chemistry.opencmis.server.shared.BasicAuthcallContextHandler");
+		wrapper.addInitParameter("callContextHandler", "com.ucap.uccc.server.shared.BasicAuthcallContextHandler");
 		wrapper.addInitParameter("cmisVersion", "1.1");
 		wrapper.setLoadOnStartup(2);
 		context.addServletMapping("/cmisatom11", "cmisatom11");
@@ -375,10 +378,19 @@ public class Server {
 		 **/
 		HttpServlet servlet = new CmisAtomPubServlet();
 		Wrapper wrapper = Tomcat.addServlet(context, "cmisbrowser", servlet);
-		wrapper.addInitParameter("callContextHandler", "org.apache.chemistry.opencmis.server.impl.browser.token.TokenCallContextHandler");
+		wrapper.addInitParameter("callContextHandler", "com.ucap.uccc.server.cmis.impl.browser.token.TokenCallContextHandler");
 		wrapper.addInitParameter("cmisVersion", "1.1");
 		wrapper.setLoadOnStartup(2);
 		context.addServletMapping("/cmisbrowser", "cmisbrowser");
+	}
+
+	private void addRepositoryContextListener(Context context) {
+		/**
+		 <listener>
+        	<listener-class>org.apache.chemistry.opencmis.server.impl.CmisRepositoryContextListener</listener-class>
+    	</listener>
+		**/
+		context.
 	}
 	
 }

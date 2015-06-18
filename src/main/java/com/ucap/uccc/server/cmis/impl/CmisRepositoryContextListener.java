@@ -54,9 +54,12 @@ public class CmisRepositoryContextListener implements ServletContextListener {
 
         // create services factory
         CmisServiceFactory factory = null;
-        try {
+        try
+		{
             factory = createServiceFactory(configFilename);
-        } catch (Exception e) {
+        }
+		catch (Exception e)
+		{
             _LOG.error("Service factory couldn't be created: " + e.toString(), e);
             return;
         }

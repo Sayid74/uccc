@@ -13,4 +13,6 @@ public final class DefaultConsts {
 	public static final String RESOURCES_PATH="resources";	
     public static final String REPOSITORY_CF = "repository.properties";
     public static final String SERVICES_FACTORY = "org.apache.chemistry.opencmis.servicesfactory";
+    public static final String CNPRM_CALL_CONTEXT_HANDLER = "callContextHandler";
+    public static final String CNPRM_CMIS_VERSION = "cmisVersion";
 }

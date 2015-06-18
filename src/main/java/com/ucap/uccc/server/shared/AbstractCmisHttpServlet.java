@@ -39,9 +39,6 @@ import static com.ucap.uccc.server.DefaultConsts.*;
 
 public abstract class AbstractCmisHttpServlet extends HttpServlet {
 
-    public static final String PARAM_CALL_CONTEXT_HANDLER = "callContextHandler";
-    public static final String PARAM_CMIS_VERSION = "cmisVersion";
-
     private static final long serialVersionUID = 1L;
 
     private CmisServiceFactory factory;
@@ -56,7 +53,7 @@ public abstract class AbstractCmisHttpServlet extends HttpServlet {
 
         // initialize the call context handler
         callContextHandler = null;
-        String callContextHandlerClass = config.getInitParameter(PARAM_CALL_CONTEXT_HANDLER);
+        String callContextHandlerClass = config.getInitParameter(CNPRM_CALL_CONTEXT_HANDLER);
         if (callContextHandlerClass != null) {
             try {
                 callContextHandler = (CallContextHandler) ClassLoaderUtil.loadClass(callContextHandlerClass)

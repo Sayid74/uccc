@@ -18,32 +18,9 @@
  */
 package com.ucap.uccc.server.cmis.impl.atompub;
 
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_ACL;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_ALLOWABLEACIONS;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_BULK_UPDATE;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_CHANGES;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_CHECKEDOUT;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_CHILDREN;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_CONTENT;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_DESCENDANTS;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_ENTRY;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_FOLDERTREE;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_OBJECTBYID;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_OBJECTBYPATH;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_PARENTS;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_POLICIES;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_QUERY;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_RELATIONSHIPS;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_TYPE;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_TYPES;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_TYPESDESC;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_UNFILED;
-import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.RESOURCE_VERSIONS;
-import static com.ucap.uccc.server.shared.Dispatcher.METHOD_DELETE;
-import static com.ucap.uccc.server.shared.Dispatcher.METHOD_GET;
-import static com.ucap.uccc.server.shared.Dispatcher.METHOD_HEAD;
-import static com.ucap.uccc.server.shared.Dispatcher.METHOD_POST;
-import static com.ucap.uccc.server.shared.Dispatcher.METHOD_PUT;
+import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.*;
+import static com.ucap.uccc.server.shared.Dispatcher.*;
+import static com.ucap.uccc.server.DefaultConsts.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -104,7 +81,7 @@ public class CmisAtomPubServlet extends AbstractCmisHttpServlet {
         setBinding(CallContext.BINDING_ATOMPUB);
 
         // get and CMIS version
-        String cmisVersionStr = config.getInitParameter(PARAM_CMIS_VERSION);
+        String cmisVersionStr = config.getInitParameter(CNPRM_CMIS_VERSION);
         if (cmisVersionStr != null) {
             try {
                 setCmisVersion(CmisVersion.fromValue(cmisVersionStr));
