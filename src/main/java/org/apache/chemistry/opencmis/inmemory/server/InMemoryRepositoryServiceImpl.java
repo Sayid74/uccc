@@ -39,7 +39,7 @@ import org.apache.chemistry.opencmis.inmemory.storedobj.api.ObjectStore;
 import org.apache.chemistry.opencmis.inmemory.storedobj.api.StoreManager;
 import org.apache.chemistry.opencmis.server.support.TypeManager;
 
-public class InMemoryRepositoryServiceImpl extends InMemoryAbstractServiceImpl {
+public class InMemoryRepositoryServiceImpl extends InMemoryAbstractService {
 
     public InMemoryRepositoryServiceImpl(StoreManager storeManager) {
         super(storeManager);

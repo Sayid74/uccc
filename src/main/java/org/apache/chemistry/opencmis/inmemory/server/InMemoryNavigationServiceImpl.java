@@ -61,7 +61,7 @@ import org.apache.chemistry.opencmis.server.support.TypeManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class InMemoryNavigationServiceImpl extends InMemoryAbstractServiceImpl {
+public class InMemoryNavigationServiceImpl extends InMemoryAbstractService {
 
     private static final int MAX_FOLDERS_IN_GET_DESC = 1000;
     private static final Logger LOG = LoggerFactory.getLogger(InMemoryNavigationServiceImpl.class);

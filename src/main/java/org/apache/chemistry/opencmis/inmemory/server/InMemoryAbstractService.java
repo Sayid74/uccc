@@ -38,19 +38,19 @@ import org.apache.chemistry.opencmis.inmemory.storedobj.api.VersionedDocument;
  * Common functionality for all service implementations
  * 
  */
-public class InMemoryAbstractServiceImpl {
+public class InMemoryAbstractService {
 
     protected final StoreManager fStoreManager;
     protected final CmisServiceValidator validator;
     protected final AtomLinkInfoProvider fAtomLinkProvider;
 
-    protected InMemoryAbstractServiceImpl(StoreManager storeManager, CmisServiceValidator validator) {
+    protected InMemoryAbstractService(StoreManager storeManager, CmisServiceValidator validator) {
         this.fStoreManager = storeManager;
         this.validator = validator;
         this.fAtomLinkProvider = new AtomLinkInfoProvider(fStoreManager);
     }
 
-    protected InMemoryAbstractServiceImpl(StoreManager storeManager) {
+    protected InMemoryAbstractService(StoreManager storeManager) {
         this.fStoreManager = storeManager;
         this.validator = storeManager.getServiceValidator();
         this.fAtomLinkProvider = new AtomLinkInfoProvider(fStoreManager);

@@ -39,7 +39,7 @@ import org.apache.chemistry.opencmis.inmemory.storedobj.api.StoredObject;
 import org.apache.chemistry.opencmis.inmemory.types.PropertyCreationHelper;
 import org.apache.chemistry.opencmis.server.support.TypeManager;
 
-public class InMemoryRelationshipServiceImpl extends InMemoryAbstractServiceImpl {
+public class InMemoryRelationshipServiceImpl extends InMemoryAbstractService {
 
     private InMemoryRepositoryServiceImpl repSvc;
 

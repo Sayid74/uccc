@@ -33,7 +33,7 @@ import org.apache.chemistry.opencmis.inmemory.storedobj.api.StoredObject;
 import org.apache.chemistry.opencmis.inmemory.types.PropertyCreationHelper;
 import org.apache.chemistry.opencmis.server.support.TypeManager;
 
-public class InMemoryPolicyServiceImpl extends InMemoryAbstractServiceImpl {
+public class InMemoryPolicyServiceImpl extends InMemoryAbstractService {
 
     protected InMemoryPolicyServiceImpl(StoreManager storeManager) {
         super(storeManager);

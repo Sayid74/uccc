@@ -33,7 +33,7 @@ import org.apache.chemistry.opencmis.inmemory.storedobj.api.StoredObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class InMemoryMultiFilingServiceImpl extends InMemoryAbstractServiceImpl {
+public class InMemoryMultiFilingServiceImpl extends InMemoryAbstractService {
 
     private static final Logger LOG = LoggerFactory.getLogger(InMemoryMultiFilingServiceImpl.class.getName());
 

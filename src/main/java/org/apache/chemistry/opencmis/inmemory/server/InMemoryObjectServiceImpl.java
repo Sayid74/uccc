@@ -87,7 +87,7 @@ import org.apache.chemistry.opencmis.server.support.TypeValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class InMemoryObjectServiceImpl extends InMemoryAbstractServiceImpl {
+public class InMemoryObjectServiceImpl extends InMemoryAbstractService {
     private static final String UNKNOWN_USER = "unknown";
     private static final String UNKNOWN_OBJECT_ID = "Unknown object id: ";
     private static final Logger LOG = LoggerFactory.getLogger(InMemoryServiceFactoryImpl.class.getName());

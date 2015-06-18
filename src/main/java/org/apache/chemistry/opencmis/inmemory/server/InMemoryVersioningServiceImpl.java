@@ -53,7 +53,7 @@ import org.apache.chemistry.opencmis.inmemory.storedobj.impl.DocumentVersionImpl
 import org.apache.chemistry.opencmis.inmemory.types.PropertyCreationHelper;
 import org.apache.chemistry.opencmis.server.support.TypeManager;
 
-public class InMemoryVersioningServiceImpl extends InMemoryAbstractServiceImpl {
+public class InMemoryVersioningServiceImpl extends InMemoryAbstractService {
 
     private InMemoryObjectServiceImpl fObjectService;
     private AtomLinkInfoProvider fAtomLinkProvider;
