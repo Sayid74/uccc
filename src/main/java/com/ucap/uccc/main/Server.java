@@ -53,7 +53,6 @@ public class Server {
 
 	private static final String SERVER_PORT = "cmis.server.port";
 	private static final String SERVER_WORK_DIR = "cmis.server.workdir";
-	private static final String SERVER_WEBAPP = "cmis.server.webapp";
 	private static final String SERVER_CONTENT = "cmis.server.content";
 	private static final String SERVER_LOG_LEVEL = "cmis.server.loglevel";
 	private static final String SERVER_RECORD = "cmis.server.record";
@@ -70,8 +69,6 @@ public class Server {
 	private Tomcat tomcat;
 	private boolean record;
 	private File workDir;
-	private File baseDir;
-	private File webDir;
 	private File recordDir;
 
 	/**
@@ -88,7 +85,6 @@ public class Server {
 
 		// create directories
 		workDir = new File(workDirPath);
-		baseDir = new File(workDir, "cmis");
 		recordDir = new File(workDir, "record");
 	}
 
@@ -96,15 +92,7 @@ public class Server {
 	 * Starts the server.
 	 */
 	public void start() throws Exception {
-		System.out.println(">>>> user dir: " + System.getProperty("user.dir"));
-		File directory = new File("");
-		try{
-			System.out.println(">>>> content path: " + directory.getCanonicalPath());
-			System.out.println(">>>> absolut path: " + directory.getAbsolutePath());
-		}catch(Exception e)
-		{
-		}
-		String logLevel = System.getProperty(SERVER_LOG_LEVEL,Level.WARN.toString());
+		String logLevel = System.getProperty(SERVER_LOG_LEVEL, Level.WARN.toString());
 		System.out.println("Setting log level to " + logLevel + " ...");
 		Logger.getRootLogger().setLevel(Level.toLevel(logLevel));
 		java.util.logging.Logger.getLogger("").setLevel(java.util.logging.Level.WARNING);

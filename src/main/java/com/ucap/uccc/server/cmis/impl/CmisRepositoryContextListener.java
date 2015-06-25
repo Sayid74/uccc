@@ -38,6 +38,7 @@ import static com.ucap.uccc.server.DefaultConsts.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Map.Entry;
 import java.util.logging.Level;
 
 /**
@@ -97,18 +98,26 @@ public class CmisRepositoryContextListener implements ServletContextListener {
 		String repositoryPath = pathOfSource(filename);
 		System.out.println(">>> repository: " + repositoryPath);
 		File f = new File(repositoryPath);
+		if (!f.exists()) return null;
+
 		System.out.println(">>> absolute path: " + f.getAbsolutePath());
         InputStream stream = null;
 		try {
 			stream = new FileInputStream(f);
 		} catch (FileNotFoundException ex) {
-			java.util.logging.Logger.getLogger(CmisRepositoryContextListener.class.getName()).log(Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(CmisRepositoryContextListener.class.getName())
+					.log(Level.SEVERE, null, ex);
 			return null;
 		}
 
         Properties props = new Properties();
         try {
             props.load(stream);
+			for (Entry<Object, Object> e : props.entrySet()) {
+				System.out.print(">>>> repository key: " + e.getKey());
+				System.out.print("     value: " + e.getValue());
+				System.out.println();
+			}
         } catch (IOException e) {
             _LOG.warn("Cannot load configuration: " + e, e);
             return null;
