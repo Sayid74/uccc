@@ -127,9 +127,9 @@ public class Server {
 
 		/*
 		addCmis10(ctx);
-		this.addCmis11(ctx);
 		this.addCmisAtom10(ctx);
 		*/
+//		addCmis11(ctx);
 		addCmisAtom11(ctx);
 		addCmisbrowser(ctx);
 
