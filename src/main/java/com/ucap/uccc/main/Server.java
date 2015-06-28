@@ -332,7 +332,7 @@ public class Server {
 		wrapper.addInitParameter("callContextHandler", "com.ucap.uccc.server.shared.BasicAuthcallContextHandler");
 		wrapper.addInitParameter("cmisVersion", "1.0");
 		wrapper.setLoadOnStartup(2);
-		context.addServletMapping("/cmisatom10", "cmisatom10");
+		context.addServletMapping("/cmisatom10/*", "cmisatom10");
 	}
 
 	private void addCmisAtom11(Context context) {
@@ -354,7 +354,7 @@ public class Server {
 		wrapper.addInitParameter("callContextHandler", "com.ucap.uccc.server.shared.BasicAuthcallContextHandler");
 		wrapper.addInitParameter("cmisVersion", "1.1");
 		wrapper.setLoadOnStartup(2);
-		context.addServletMapping("/cmisatom11", "cmisatom11");
+		context.addServletMapping("/cmisatom11/*", "cmisatom11");
 	}
 	
 	private void addCmisbrowser(Context context) {
@@ -372,7 +372,7 @@ public class Server {
 		wrapper.addInitParameter("callContextHandler", "com.ucap.uccc.server.cmis.impl.browser.token.TokenCallContextHandler");
 		wrapper.addInitParameter("cmisVersion", "1.1");
 		wrapper.setLoadOnStartup(2);
-		context.addServletMapping("/cmisbrowser", "cmisbrowser");
+		context.addServletMapping("/cmisbrowser/*", "cmisbrowser");
 	}
 
 	private void addRepositoryContextListener(Context context) {
