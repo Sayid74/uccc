@@ -50,12 +50,12 @@ import com.sun.xml.ws.transport.http.servlet.ServletAdapter;
 import com.sun.xml.ws.transport.http.servlet.WSServlet;
 import com.sun.xml.ws.transport.http.servlet.WSServletDelegate;
 
-import static com.ucap.uccc.server.DefaultConsts.*;
+import static com.ucap.uccc.main.DefaultConsts.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
-import static com.ucap.uccc.server.DefaultConsts.*;
+import static com.ucap.uccc.main.DefaultConsts.*;
 public class CmisWebServicesServlet extends WSServlet {
 
     public static final String PARAM_CMIS_VERSION = "cmisVersion";

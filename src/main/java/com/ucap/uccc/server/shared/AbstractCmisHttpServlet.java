@@ -35,7 +35,7 @@ import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.CallContextImpl;
 import com.ucap.uccc.server.cmis.impl.browser.BrowserCallContextImpl;
-import static com.ucap.uccc.server.DefaultConsts.*;
+import static com.ucap.uccc.main.DefaultConsts.*;
 import com.ucap.uccc.server.cmis.impl.browser.token.TokenCallContextHandler;
 
 public abstract class AbstractCmisHttpServlet extends HttpServlet {

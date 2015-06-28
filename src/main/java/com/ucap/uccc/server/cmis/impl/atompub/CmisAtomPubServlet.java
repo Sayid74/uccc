@@ -20,7 +20,7 @@ package com.ucap.uccc.server.cmis.impl.atompub;
 
 import static com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall.*;
 import static com.ucap.uccc.server.shared.Dispatcher.*;
-import static com.ucap.uccc.server.DefaultConsts.*;
+import static com.ucap.uccc.main.DefaultConsts.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;

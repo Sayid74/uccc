@@ -59,7 +59,7 @@ import com.ucap.uccc.server.shared.ExceptionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;
-import static com.ucap.uccc.server.DefaultConsts.*;
+import static com.ucap.uccc.main.DefaultConsts.*;
 
 /**
  * This class contains operations used by all services.

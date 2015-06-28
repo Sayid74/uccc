@@ -41,7 +41,7 @@ import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener;
 import com.ucap.uccc.server.cmis.impl.browser.AbstractBrowserServiceCall;
-import static com.ucap.uccc.server.DefaultConsts.*;
+import static com.ucap.uccc.main.DefaultConsts.*;
 
 public abstract class AbstractSimpleTokenHandler implements TokenHandler, Serializable {
 

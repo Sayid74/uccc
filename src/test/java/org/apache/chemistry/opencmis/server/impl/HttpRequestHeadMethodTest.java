@@ -52,7 +52,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import static com.ucap.uccc.server.DefaultConsts.*;
+import static com.ucap.uccc.main.DefaultConsts.*;
 
 public class HttpRequestHeadMethodTest {
     private static final String CONTEXT_PATH = "/context";

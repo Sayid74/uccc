@@ -34,7 +34,7 @@ import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.ucap.uccc.server.DefaultConsts.*;
+import static com.ucap.uccc.main.DefaultConsts.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
