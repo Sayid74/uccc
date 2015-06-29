@@ -29,7 +29,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.chemistry.opencmis.commons.enums.CmisVersion;
 import org.apache.chemistry.opencmis.commons.exceptions.CmisRuntimeException;
-import org.apache.chemistry.opencmis.commons.impl.ClassLoaderUtil;
 import org.apache.chemistry.opencmis.commons.impl.Constants;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
@@ -109,8 +108,10 @@ public abstract class AbstractCmisHttpServlet extends HttpServlet {
     /**
      * Creates a {@link CallContext} object from a servlet request.
      */
-    protected CallContext createContext(ServletContext servletContext, HttpServletRequest request,
-            HttpServletResponse response) {
+    protected CallContext createContext(ServletContext servletContext
+			, HttpServletRequest request
+			, HttpServletResponse response)
+	{
         String[] pathFragments = HttpUtils.splitPath(request);
 
         String repositoryId = null;
