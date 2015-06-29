@@ -24,7 +24,7 @@ import static org.junit.Assert.fail;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import com.ucap.uccc.server.cmis.impl.webservices.ProtectionRequestWrapper;
+import com.ucap.uccc.cmis.impl.webservices.ProtectionRequestWrapper;
 import org.junit.Test;
 
 public class CheckServletInputStreamTest {

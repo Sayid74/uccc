@@ -18,7 +18,7 @@
  */
 package org.apache.chemistry.opencmis.server.impl;
 
-import com.ucap.uccc.server.cmis.impl.CmisRepositoryContextListener;
+import com.ucap.uccc.server.utils.CmisRepositoryContextListener;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -44,15 +44,15 @@ import org.apache.chemistry.opencmis.commons.data.CacheHeaderContentStream;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
-import com.ucap.uccc.server.cmis.impl.atompub.AbstractAtomPubServiceCall;
-import com.ucap.uccc.server.cmis.impl.atompub.CmisAtomPubServlet;
-import com.ucap.uccc.server.cmis.impl.browser.CmisBrowserBindingServlet;
+import com.ucap.uccc.cmis.impl.atompub.AbstractAtomPubServiceCall;
+import com.ucap.uccc.cmis.impl.atompub.CmisAtomPubServlet;
+import com.ucap.uccc.cmis.impl.browser.CmisBrowserBindingServlet;
 import com.ucap.uccc.server.shared.Dispatcher;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import static com.ucap.uccc.main.DefaultConsts.*;
+import static com.ucap.uccc.server.main.DefaultConsts.*;
 
 public class HttpRequestHeadMethodTest {
     private static final String CONTEXT_PATH = "/context";

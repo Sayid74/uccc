@@ -18,7 +18,7 @@
  */
 package org.apache.chemistry.opencmis.server.impl;
 
-import com.ucap.uccc.server.cmis.impl.CallContextImpl;
+import com.ucap.uccc.cmis.impl.common.CallContextImpl;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
