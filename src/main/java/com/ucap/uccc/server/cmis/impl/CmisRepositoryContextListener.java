@@ -96,12 +96,12 @@ public class CmisRepositoryContextListener implements ServletContextListener {
     private CmisServiceFactory createServiceFactory(String filename) {
         // load properties
 		String repositoryPath = pathOfSource(filename);
-		System.out.println(">>> repository: " + repositoryPath);
+		System.out.println(">>>> repository: " + repositoryPath);
 		File f = new File(repositoryPath);
 		if (!f.exists()) return null;
 
-		System.out.println(">>> absolute path: " + f.getAbsolutePath());
-        InputStream stream = null;
+		System.out.println(">>>> absolute path: " + f.getAbsolutePath());
+        InputStream stream;
 		try {
 			stream = new FileInputStream(f);
 		} catch (FileNotFoundException ex) {

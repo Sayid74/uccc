@@ -28,17 +28,15 @@ import com.ucap.uccc.server.cmis.impl.atompub.CmisAtomPubServlet;
 import com.ucap.uccc.server.cmis.impl.webservices.CmisWebServicesServlet;
 import com.ucap.uccc.server.shared.ThresholdOutputStreamFactory;
 import org.apache.chemistry.opencmis.server.support.filter.LoggingFilter;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.apache.tomcat.util.descriptor.web.FilterDef;
 import org.apache.tomcat.util.descriptor.web.FilterMap;
 
 import static com.ucap.uccc.main.DefaultConsts.*;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 public class Server {
-
 	private static final int DEFAULT_PORT = 8081;
-
 	private static final String SERVER_PORT = "cmis.server.port";
 	private static final String SERVER_WORK_DIR = "cmis.server.workdir";
 	private static final String SERVER_LOG_LEVEL = "cmis.server.loglevel";
@@ -62,7 +60,6 @@ public class Server {
 	 */
 	public Server() throws Exception {
 		System.out.println("\n:: InMemory CMIS Server ::\n");
-
 		String workDirPath = System.getProperty(SERVER_WORK_DIR, ".");
 
 		// record requests?
