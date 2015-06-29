@@ -102,7 +102,7 @@ import org.apache.chemistry.opencmis.commons.impl.Constants;
 import org.apache.chemistry.opencmis.commons.impl.json.JSONObject;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
-import com.ucap.uccc.server.utils.ServerVersion;
+import com.ucap.uccc.server.shared.ServerVersion;
 import com.ucap.uccc.cmis.impl.browser.token.TokenHandler;
 import com.ucap.uccc.server.shared.AbstractCmisHttpServlet;
 import com.ucap.uccc.server.shared.Dispatcher;

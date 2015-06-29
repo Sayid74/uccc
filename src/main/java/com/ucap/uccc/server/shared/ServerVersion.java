@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.ucap.uccc.server.utils;
+package com.ucap.uccc.server.shared;
 
 public final class ServerVersion {
 

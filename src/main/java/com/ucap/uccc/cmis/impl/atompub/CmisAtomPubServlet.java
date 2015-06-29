@@ -49,7 +49,7 @@ import org.apache.chemistry.opencmis.commons.exceptions.CmisVersioningException;
 import org.apache.chemistry.opencmis.commons.impl.IOUtils;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
-import com.ucap.uccc.server.utils.ServerVersion;
+import com.ucap.uccc.server.shared.ServerVersion;
 import com.ucap.uccc.server.shared.AbstractCmisHttpServlet;
 import com.ucap.uccc.server.shared.Dispatcher;
 import com.ucap.uccc.server.shared.ExceptionHelper;

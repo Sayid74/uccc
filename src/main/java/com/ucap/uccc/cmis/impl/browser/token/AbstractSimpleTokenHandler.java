@@ -39,7 +39,7 @@ import org.apache.chemistry.opencmis.commons.impl.json.JSONStreamAware;
 import org.apache.chemistry.opencmis.commons.server.CallContext;
 import org.apache.chemistry.opencmis.commons.server.CmisService;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
-import com.ucap.uccc.server.utils.CmisRepositoryContextListener;
+import com.ucap.uccc.server.shared.CmisRepositoryContextListener;
 import com.ucap.uccc.cmis.impl.browser.AbstractBrowserServiceCall;
 import static com.ucap.uccc.server.main.DefaultConsts.*;
 

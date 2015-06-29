@@ -38,7 +38,7 @@ import org.apache.chemistry.opencmis.commons.exceptions.CmisRuntimeException;
 import org.apache.chemistry.opencmis.commons.impl.IOUtils;
 import org.apache.chemistry.opencmis.commons.impl.UrlBuilder;
 import org.apache.chemistry.opencmis.commons.server.CmisServiceFactory;
-import com.ucap.uccc.server.utils.CmisRepositoryContextListener;
+import com.ucap.uccc.server.shared.CmisRepositoryContextListener;
 import com.ucap.uccc.server.shared.Dispatcher;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.slf4j.Logger;

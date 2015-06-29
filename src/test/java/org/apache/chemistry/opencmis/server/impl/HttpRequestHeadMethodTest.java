@@ -18,7 +18,7 @@
  */
 package org.apache.chemistry.opencmis.server.impl;
 
-import com.ucap.uccc.server.utils.CmisRepositoryContextListener;
+import com.ucap.uccc.server.shared.CmisRepositoryContextListener;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
